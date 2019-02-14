@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - iitb_dj
+id: footer-menu-3
+label: Footer menu col-3
+description: 'Footer column 3 menu'
+locked: false

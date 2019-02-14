@@ -1,0 +1,475 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template in this directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title: The page title, for use in the actual content.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - messages: Status and error messages. Should be displayed prominently.
+ * - tabs: Tabs linking to any sub-pages beneath the current page (e.g., the
+ *   view and edit tabs when displaying a node).
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.navigation: Items for the navigation region.
+ * - page.navigation_collapsible: Items for the navigation (collapsible) region.
+ * - page.highlighted: Items for the highlighted content region.
+ * - page.help: Dynamic help text, mostly for admin pages.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.footer: Items for the footer region.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
+{% set main_container_class = is_admin ? 'main-container-admin' : 'main-container' %}
+{# Navbar #}
+{% if page.header or page.header_search or page.navigation_collapsible %}
+  {% block navbar %}
+    {%
+      set navbar_classes = [
+        'navbar',
+        theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
+        theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
+      ]
+      
+    %}
+{#       <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+          {% if not navbar_attributes.hasClass(container) %}
+            <div class="{{ container }}">
+          {% endif %}
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        {{ page.header }}
+                      </div>
+                     </div> 
+
+               
+                    <div class="row">
+                      <div class="col-sm-12">
+                       {% if page.navigation_collapsible %}
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-menu">
+                                  <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                          </button>
+                        {% endif %}
+                      </div>
+                    </div>
+
+
+                    <div class="row" id="nav-wrap">
+                      <div class="col-md-3 pull-right">
+                        {% if page.header_search %}
+                          {{ page.header_search }}
+                        {% endif %}
+                      </div>
+                      <div class="navbar-header col-md-9">
+                        <nav class="navbar" role="navigation">
+                          {% if page.navigation_collapsible %}
+                            {{ page.navigation_collapsible }}
+                          {% endif %}
+                        </nav>
+                      </div>
+                    </div>
+
+
+
+          {% if not navbar_attributes.hasClass(container) %}
+            </div>
+          {% endif %}
+      </header>
+ #}
+<header class="sabbi-site-head">
+        <nav class="navbar navbar-white navbar-kawsa navbar-fixed-top " role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+                      <span class="sr-only"> Toggle navigation</span>
+                      <span class="icon-bar"></span> 
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button> 
+                   {#  <a class="navbar-brand" href="http://rushmore.wpcolorlab.com/" title="Academix – Multipurpose Researcher and Professor WordPress Theme" data-scroll="">
+                      <img src="./acadmix_assets/logo.png" alt="" class="img-responsive">
+                    </a> #}
+                    {{ page.header }}
+               </div>
+                <div class="navbar-collapse collapse sabbi-navbar-collapse  navbar-nav-hov_underline" id="navbar">
+                    <div class="nav-btn-wrap">
+                      {# <a href="http://rushmore.wpcolorlab.com/future-member/" class="btn btn-primary">Join Research</a> #}
+                      {{ page.header_search }}
+                    </div>
+                    {#
+                    <ul id="menu-main-nav" class="nav navbar-nav navbar-right">
+                      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1617" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-4 current_page_item menu-item-1617 active">
+                        <a title="Home" href="http://rushmore.wpcolorlab.com/">Home</a>
+                      </li>
+                      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1624" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1624">
+                        <a title="Research" href="http://rushmore.wpcolorlab.com/research/">Research</a>
+                      </li>
+                      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1625" class="menu-item menu-item-type-post_type menu-item-object-team menu-item-has-children menu-item-1625 dropdown">
+                        <a title="People" href="http://rushmore.wpcolorlab.com/rushmore_teams/dr-rushmore/" data-toggle="dropdown" data-hover="dropdown" data-animations="zoomIn" class="dropdown-toggle" aria-haspopup="true">People <span class="caret"></span>
+                        </a>
+                        <ul role="menu" class="dropdown-menu">
+                          <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1626" class="menu-item menu-item-type-post_type menu-item-object-team menu-item-1626">
+                            <a title="Dr. Rushmore" href="http://rushmore.wpcolorlab.com/rushmore_teams/dr-rushmore/">Dr. Rushmore</a>
+                          </li>
+                          <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1623" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1623">
+                            <a title="Our Team" href="http://rushmore.wpcolorlab.com/our-team/">Our Team</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1700" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1700 dropdown">
+                        <a title="Publications" href="http://rushmore.wpcolorlab.com/#" data-toggle="dropdown" data-hover="dropdown" data-animations="zoomIn" class="dropdown-toggle" aria-haspopup="true">Publications <span class="caret"></span></a>
+                        <ul role="menu" class="dropdown-menu">
+                          <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1619" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1619"><a title="Books" href="http://rushmore.wpcolorlab.com/books/">Books</a></li>
+                          <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1622" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1622"><a title="Journal Articles" href="http://rushmore.wpcolorlab.com/journal-articles/">Journal Articles</a></li>
+                          <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1620" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1620"><a title="Conferences And Talks" href="http://rushmore.wpcolorlab.com/conferences-and-talks/">Conferences And Talks</a></li>
+                        </ul>
+                      </li>
+                    </ul> 
+                    #}
+                    {{ page.navigation_collapsible }}            
+        </div><!-- navbar-collapse collapse -->
+            </div><!-- container -->
+        </nav><!-- /.navbar -->
+    </header><!-- #masthead --> 
+
+   {% endblock %} {#end block navbar #}
+{% endif %} {# end if page.header or..... #}
+
+{# Main #}
+{% block main %}
+  <div role="main" id="body" class="{{ main_container_class}} {{ container }} js-quickedit-main-content">
+
+
+      {% if page.breadcrumb %}
+      <div class="{{ container }}">
+       <div class="row clearfix">
+          <div class="col-md-12">
+             {{ page.breadcrumb }}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      
+    {% if is_front %}
+          {% if page.top1 or page.top2 or page.top3 or page.top4 or page.top_head or page.slider %}
+                <div class="container-fluid">
+                  {% if page.slider %}
+                    <div class="row">
+                      <div class="col-md-12">
+                        {{ page.slider }}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if page.top_head %}
+                    <div class="row clearfix">
+                      <div class="col-md-12 top-head animated fadeInDown delay-03s">
+                        {% if page.highlighted %}
+                            {{ page.highlighted }}
+                        {% endif %}
+                        {{ page.top_head }}   
+                      </div>
+                    </div>
+                  {% endif %}
+                  
+                  {% if page.top1 or page.top2 or page.top3 or page.top4 %}
+                    <div class="row clearfix">
+                      {% if page.top1 %}
+                        {% if page.top2 and page.top3 and page.top4 %}
+                          <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
+                          {% elseif page.top2 and page.top3 %}
+                            <div class="col-lg-4 col-md-4 top-wrapper">
+                          {% elseif page.top2 and page.top4 %}
+                            <div class="col-lg-4 col-md-4 top-wrapper">
+                          {% elseif page.top3 and page.top4 %}
+                            <div class="col-lg-4 col-md-4 top-wrapper">
+                          {% elseif page.top2 or page.top3 or page.top4 %}
+                            <div class="col-lg-6 col-md-6 top-wrapper">
+                          {% else  %}
+                            <div class="col-lg-12">
+                        {% endif %}
+                          <div class="top1">{{ page.top1 }}</div>
+                          </div>
+                      {% endif %}
+
+                      {% if page.top2 %}
+                        {% if page.top1 and page.top3 and page.top4 %}
+                          <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
+                          {% elseif page.top1 and page.top3 %}
+                            <div class="col-lg-4 col-md-4 top-wrapper">
+                          {% elseif page.top1 and page.top4 %}
+                            <div class="col-lg-4 col-md-4 top-wrapper">
+                          {% elseif page.top3 and page.top4 %}
+                            <div class="col-lg-4 col-md-4 top-wrapper">
+                          {% elseif page.top1 or page.top3 or page.top4 %}
+                            <div class="col-lg-6 col-md-6 top-wrapper">
+                          {% else  %}
+                            <div class="col-lg-12">
+                        {% endif %}
+                          <div class="top2">{{ page.top2 }}</div>
+                        </div>
+                      {% endif %}
+
+                      {% if page.top3 %}
+                        {% if page.top1 and page.top2 and page.top4 %}
+                          <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
+                          {% elseif page.top1 and page.top2 %}
+                            <div class="col-lg-4 col-md-4 top-wrapper">
+                          {% elseif page.top1 and page.top4 %}
+                            <div class="col-lg-4 col-md-4 top-wrapper">
+                          {% elseif page.top2 and page.top4 %}
+                            <div class="col-lg-4 col-md-4 top-wrapper">
+                          {% elseif page.top1 or page.top2 or page.top4 %}
+                            <div class="col-lg-6 col-md-6 top-wrapper">
+                          {% else  %}
+                            <div class="col-lg-12">
+                        {% endif %}
+                          <div class="top3">{{ page.top3 }}</div>
+                          </div>
+                      {% endif %}
+
+                      {% if page.top4 %}
+                        {% if page.top1 and page.top2 and page.top3 %}
+                          <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
+                          {% elseif page.top1 and page.top2 %}
+                            <div class="col-lg-4 col-md-4 top-wrapper">
+                          {% elseif page.top1 and page.top3 %}
+                            <div class="col-lg-4 col-md-4 top-wrapper">
+                          {% elseif page.top2 and page.top3 %}
+                            <div class="col-lg-4 col-md-4 top-wrapper">
+                          {% elseif page.top1 or page.top2 or page.top3 %}
+                            <div class="col-lg-6 col-md-6 top-wrapper">
+                          {% else  %}
+                            <div class="col-lg-12">
+                        {% endif %}
+                          <div class="top4">{{ page.top4 }}</div>
+                          </div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </div> {# container-fluid #}
+            {% endif %}
+
+  
+
+        
+    {% endif %}
+
+        {# content top #}
+      {% if page.content_top and not is_front %}
+        {% block content_top %}
+            <div class="container-fluid">
+              <div class="row clearfix">
+                <div class="col-sm-12" role="heading">
+                {{ page.highlighted }}
+                  {{ page.content_top }}
+                </div>
+              </div>
+            </div>
+        {% endblock %}
+      {% endif %}
+
+  
+        {# Sidebar First #}
+      {% if page.sidebar_first or page.sidebar_second or page.content %}
+        <div class="{{ container }}">
+          <div class="row clearfix" id="main-wrapper">
+              {% if page.sidebar_first %}
+                {% block sidebar_first %}
+                  <aside class="col-sm-3" role="complementary">
+                    {{ page.sidebar_first }}
+                  </aside>
+                {% endblock %}
+              {% endif %}
+
+              {# Content #}
+              {%
+                set content_classes = [
+                  page.sidebar_first and page.sidebar_second ? 'col-sm-6',
+                  page.sidebar_first and page.sidebar_second is empty ? 'col-sm-9',
+                  page.sidebar_second and page.sidebar_first is empty ? 'col-sm-9',
+                  page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
+                ]
+              %}
+              <section{{ content_attributes.addClass(content_classes) }}>
+                  {# Help #}
+                  {% if page.help %}
+                      {{ page.help }}
+                  {% endif %}
+
+                  {# Content #}
+                  {% if not is_front %}
+                    {% block content %}
+                      <a id="main-content"></a>
+                        {{ page.content }}
+                    {% endblock %}
+                  {% endif %}
+              </section>
+
+                {# Sidebar Second #}
+                {% if page.sidebar_second %}
+                  {% block sidebar_second %}
+                    <aside class="col-sm-3" role="complementary">
+                      {{ page.sidebar_second }}
+                    </aside>
+                  {% endblock %}
+                {% endif %}
+          </div>
+        </div>
+      {% endif %}
+ 
+  </div>
+{% endblock %}
+
+{% if page.footer1 or page.footer2 or page.footer3 or page.footer4 or page.footer_bar_left or page.footer_bar_right %}
+  <footer class=" footer1 site-footer section-footer" id="footer" role="contentinfo">
+    {% if page.footer1 or page.footer2 or page.footer3 or page.footer4 %}
+      <div class="container">
+        <div class="row">
+          {% if page.footer1 %}
+            {% if page.footer2 and page.footer3 and page.footer4 %}
+              <div class="col-lg-3 col-md-3">
+              {% elseif page.footer2 and page.footer3 %}
+                <div class="col-lg-4 col-md-4">
+              {% elseif page.footer2 and page.footer4 %}
+                <div class="col-lg-4 col-md-4">
+              {% elseif page.footer3 and page.footer4 %}
+                <div class="col-lg-4 col-md-4">
+              {% elseif page.footer2 or page.footer3 or page.footer4 %}
+                <div class="col-lg-6 col-md-6">
+              {% else  %}
+                <div class="col-lg-12">
+            {% endif %}
+              <div class="top1 footer-site-info footer-widget">
+                {{ page.footer1 }}
+              </div>
+            </div>
+          {% endif %}
+
+          {% if page.footer2 %}
+            {% if page.footer1 and page.footer3 and page.footer4 %}
+              <div class="col-lg-3 col-md-3">
+              {% elseif page.footer1 and page.footer3 %}
+                <div class="col-lg-4 col-md-4">
+              {% elseif page.footer1 and page.footer4 %}
+                <div class="col-lg-4 col-md-4">
+              {% elseif page.footer3 and page.footer4 %}
+                <div class="col-lg-4 col-md-4">
+              {% elseif page.footer1 or page.footer3 or page.footer4 %}
+                <div class="col-lg-6">
+              {% else  %}
+                <div class="col-lg-12">
+            {% endif %}
+              <div class="top2 footer-site-info footer-widget">
+                {{ page.footer2 }}
+              </div>
+            </div>
+          {% endif %}
+
+          {% if page.footer3 %}
+            {% if page.footer1 and page.footer2 and page.footer4 %}
+              <div class="col-lg-3 col-md-3">
+              {% elseif page.footer1 and page.footer2 %}
+                <div class="col-lg-4 col-md-4">
+              {% elseif page.footer1 and page.footer4 %}
+                <div class="col-lg-4 col-md-4">
+              {% elseif page.footer2 and page.footer4 %}
+                <div class="col-lg-4 col-md-4">
+              {% elseif page.footer1 or page.footer2 or page.footer4 %}
+                <div class="col-lg-6">
+              {% else  %}
+                <div class="col-lg-12">
+            {% endif %}
+              <div class="top3 footer-site-info footer-widget">
+                {{ page.footer3 }}
+              </div>
+            </div>
+          {% endif %}
+
+          {% if page.footer4 %}
+            {% if page.footer1 and page.footer2 and page.footer3 %}
+              <div class="col-lg-3 col-md-3">
+              {% elseif page.footer1 and page.footer2 %}
+                <div class="col-lg-4 col-md-4">
+              {% elseif page.footer1 and page.footer3 %}
+                <div class="col-lg-4 col-md-4">
+              {% elseif page.footer2 and page.footer3 %}
+                <div class="col-lg-4 col-md-4">
+              {% elseif page.footer1 or page.footer2 or page.footer3 %}
+                <div class="col-lg-6">
+              {% else  %}
+                <div class="col-lg-12">
+            {% endif %}
+              <div class="top4 footer-site-info footer-widget">
+                {{ page.footer4 }}
+              </div>
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+    {% endif %}
+
+  <div id="site-footer-bar" class="footer-bar">
+            <div class="container">
+                <div class="row">
+                  {% if page.footer_bar_left %}
+                    {% block footer_bar_left %}
+                      <div class="col-sm-8">
+                          <div class="copyright">
+                            {{ page.footer_bar_left }}
+                          </div>
+                      </div>
+                    {% endblock %}
+                  {% endif %}
+                  {% if page.footer_bar_right %}
+                    {% block footer_bar_right %}
+                      <div class="col-sm-4 ">
+                        <div class="powredby">
+                          {{ page.footer_bar_right }}
+                        </div>
+                      </div>
+                    {% endblock %}
+                  {% endif %}
+                </div>
+            </div>
+    </div>
+</footer>
+{% endif %}
+</div>
+</div>

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - acadmix
+name: home_slider
+label: 'home slider'
+effects:
+  id: image_scale_and_crop
+  weight: 1
+  data:
+    width: 1200
+    height: 400

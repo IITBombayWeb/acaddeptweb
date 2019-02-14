@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-menu-2
+  module:
+    - system
+  theme:
+    - acadmix
+  enforced:
+    theme:
+      - acadmix
+id: acadmix_footermenu2
+theme: acadmix
+region: footer3
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-menu-2'
+settings:
+  id: 'system_menu_block:footer-menu-2'
+  label: Activities
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

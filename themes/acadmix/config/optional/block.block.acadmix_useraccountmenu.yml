@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - acadmix
+  enforced:
+    theme:
+      - acadmix
+id: acadmix_useraccountmenu
+theme: acadmix
+region: footer_bar_left
+weight: -12
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

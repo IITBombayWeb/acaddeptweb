@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - acadmix
+id: footer-menu-2
+label: Footer menu col-2
+description: 'Footer column 2 menu'
+locked: false

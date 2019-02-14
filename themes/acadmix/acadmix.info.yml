@@ -1,0 +1,39 @@
+core: 8.x
+type: theme
+base theme: bootstrap
+
+name: 'Acadmix '
+description: 'Custom subtheme using bootstrap as base theme'
+package: 'Bootstrap'
+
+regions:
+  header: 'Header'
+  header_search: 'Header Search box'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  slider: 'slider'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  top_head: 'Top Head region'
+  top1: 'Top1'
+  top2: 'Top2'
+  top3: 'Top3'
+  top4: 'Top4'
+  content_top: 'Content Top'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  footer1: 'Footer1'
+  footer2: 'Footer2'
+  footer3: 'Footer3'
+  footer4: 'Footer4'
+  footer_bar_left: 'Footer bar left'
+  footer_bar_right: 'Footer bar right'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+libraries:
+  - acadmix/academix-lib
+  - acadmix/font-awesome
+  - acadmix/webfonts
+  - acadmix/smartmenus
+  - acadmix/global-styling

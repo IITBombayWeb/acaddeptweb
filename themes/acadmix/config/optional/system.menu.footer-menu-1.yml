@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - acadmix
+id: footer-menu-1
+label: Services
+description: 'Footer column 1 menu'
+locked: false

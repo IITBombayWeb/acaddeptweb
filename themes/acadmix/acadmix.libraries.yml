@@ -1,0 +1,48 @@
+academix-lib:
+  css:
+    theme:
+      includes/others/bootstrap-dropdownhover.min.css: {}
+      includes/others/animate.css: {}
+      includes/others/hover-min.css: {}
+      includes/others/overrides.min.css: {}
+
+  js:
+    includes/others/bootstrap-dropdownhover.min.js: {}
+  dependencies:
+    - core/jquery
+
+font-awesome:
+  version: 5.7.1
+  css:
+    theme:
+      includes/font-awesome/css/all.min.css: {}
+
+webfonts:
+  version: VERSION
+  css:
+    theme:
+      //fonts.googleapis.com/css?family=Montserrat:400,700: { type: external }
+      //fonts.googleapis.com/css?family=Merriweather|Open+Sans: { type: external }
+      //fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Oswald: {type: external }
+
+# smartmenus
+smartmenus:
+  version: 1.x
+  css:
+    theme:
+      includes/smartmenus/sm-core-css.css: {}
+  js:
+    includes/smartmenus/jquery.smartmenus.min.js: {}
+  dependencies:
+    - core/jquery
+
+global-styling:
+  css:
+    theme:
+      css/main.css: {}
+      css/custom.css: {}
+  js:
+    js/custom.js: {}
+    js/SmoothScroll.min.js: {}
+  dependencies:
+    - core/jquery

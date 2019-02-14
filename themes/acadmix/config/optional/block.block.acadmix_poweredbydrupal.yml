@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - acadmix
+  enforced:
+    theme:
+      - acadmix
+id: acadmix_poweredbydrupal
+theme: acadmix
+region: footer_bar_right
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }
