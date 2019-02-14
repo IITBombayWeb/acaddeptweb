@@ -1,0 +1,92 @@
+<?php
+
+use \Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+/**
+ * @file
+ * Install, update and uninstall hooks for the Demo install profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function acaddeptweb_install() {
+  // First, do everything that is done in the standard profile.
+  include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
+  standard_install();
+  //\Drupal::service('theme_handler')->setDefault('academix');
+  // Enable the admin theme.
+  //\Drupal::configFactory()->getEditable('node.settings')->set('seven', TRUE)->save(TRUE);
+  // Set it as the admin theme
+  //\Drupal::service('config.factory')->getEditable('system.theme')->set('admin', 'seven')->save();
+
+  // Add code here to make nodes, terms, etc.
+  // Set front page to "node".
+  //\Drupal::configFactory()->getEditable('system.site')->set('page.front', '/home')->save(TRUE);
+
+  // Assign user 1 the "developer" role.
+  //$user = User::load(1);
+  //$user->roles[] = 'administrator';
+  //$user->save();
+
+  // Enable the admin theme.
+  //\Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
+
+  \Drupal::configFactory()
+    ->getEditable('system.theme')
+    ->set('default', 'acadmix')
+    ->save();
+
+  // Creating users with this role.
+  //$user_add = User::create();
+  //$user_add->setUsername('Tom');
+  //$user_add->setEmail('tom@example.com');
+  //$user_add->setPassword(user_password());
+  //$user_add->enforceIsNew();
+  //$user_add->activate();
+  //$user_add->roles[] = 'developer';
+  //$user_save = $user_add->save();
+
+  //$user_add = User::create();
+  //$user_add->setUsername('Harry');
+  //$user_add->setEmail('harry@example.com');
+  //$user_add->setPassword(user_password());
+  //$user_add->enforceIsNew();
+  //$user_add->activate();
+  //$user_add->roles[] = 'developer';
+  //$user_save = $user_add->save();
+
+  $node = Node::create([
+   'type' => 'page',
+   'title' => 'About Us',
+   'body' => array(
+     'value' =>"Academic Department Website Distribution",
+      'format' => 'full_html',
+    ),
+  ]);  
+
+  $node->save();
+
+  // $term =Term::create([
+  // 'name' => 'term 1',
+  // 'vid' => 'department',
+  // ])->save();
+}
+
+/**
+ * Update 8101: Description
+ */
+// function acaddeptweb_update_8101() {
+
+//   drupal_set_message(t("Facets update"));
+//   \Drupal::service('module_installer')->install(array('facets'));
+
+//   // Example of what to do if there is an error during your update.
+//   if ($some_error_condition_met) {
+//     throw new UpdateException('Something went wrong; here is what you should do.');
+//   }
+// }
