@@ -7,9 +7,6 @@ dependencies:
     - system
   theme:
     - acadmix
-  enforced:
-    theme:
-      - acadmix
 id: acadmix_footermenu2
 theme: acadmix
 region: footer3
