@@ -5,13 +5,10 @@ dependencies:
     - help
   theme:
     - acadmix
-  enforced:
-    theme:
-      - acadmix
 id: acadmix_help
 theme: acadmix
 region: help
-weight: -6
+weight: -30
 provider: null
 plugin: help_block
 settings:

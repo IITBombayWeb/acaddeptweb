@@ -7,13 +7,10 @@ dependencies:
     - system
   theme:
     - acadmix
-  enforced:
-    theme:
-      - acadmix
 id: acadmix_tools
 theme: acadmix
-region: sidebar_second
-weight: -6
+region: sidebar_first
+weight: 0
 provider: null
 plugin: 'system_menu_block:tools'
 settings:
@@ -23,9 +20,4 @@ settings:
   label_display: visible
   level: 1
   depth: 0
-visibility:
-  request_path:
-    id: request_path
-    pages: '<front>'
-    negate: true
-    context_mapping: {  }
+visibility: {  }

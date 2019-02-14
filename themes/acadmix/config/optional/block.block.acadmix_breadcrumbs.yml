@@ -5,13 +5,10 @@ dependencies:
     - system
   theme:
     - acadmix
-  enforced:
-    theme:
-      - acadmix
 id: acadmix_breadcrumbs
-theme: academix
+theme: acadmix
 region: content_top
-weight: -11
+weight: 0
 provider: null
 plugin: system_breadcrumb_block
 settings:

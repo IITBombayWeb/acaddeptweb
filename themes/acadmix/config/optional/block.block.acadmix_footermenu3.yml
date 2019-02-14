@@ -11,14 +11,14 @@ dependencies:
     theme:
       - acadmix
 id: acadmix_footermenu3
-theme: acadmixs
+theme: acadmix
 region: footer4
 weight: 0
 provider: null
 plugin: 'system_menu_block:footer-menu-3'
 settings:
   id: 'system_menu_block:footer-menu-3'
-  label: Resources
+  label: Footer menu 3
   provider: system
   label_display: visible
   level: 1

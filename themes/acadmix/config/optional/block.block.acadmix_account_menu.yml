@@ -7,13 +7,10 @@ dependencies:
     - system
   theme:
     - acadmix
-  enforced:
-    theme:
-      - acadmix
-id: acadmix_useraccountmenu
+id: acadmix_account_menu
 theme: acadmix
 region: footer_bar_left
-weight: -12
+weight: 0
 provider: null
 plugin: 'system_menu_block:account'
 settings:
@@ -22,5 +19,5 @@ settings:
   provider: system
   label_display: '0'
   level: 1
-  depth: 0
+  depth: 1
 visibility: {  }

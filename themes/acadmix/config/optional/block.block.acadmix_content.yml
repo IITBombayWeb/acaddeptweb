@@ -5,9 +5,6 @@ dependencies:
     - system
   theme:
     - acadmix
-  enforced:
-    theme:
-      - acadmix
 id: acadmix_content
 theme: acadmix
 region: content

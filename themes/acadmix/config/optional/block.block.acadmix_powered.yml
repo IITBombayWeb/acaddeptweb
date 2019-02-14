@@ -5,15 +5,15 @@ dependencies:
     - system
   theme:
     - acadmix
-id: acadmix_messages
+id: acadmix_powered
 theme: acadmix
-region: highlighted
-weight: 0
+region: footer_bar_left
+weight: 10
 provider: null
-plugin: system_messages_block
+plugin: system_powered_by_block
 settings:
-  id: system_messages_block
-  label: 'Status messages'
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
   provider: system
   label_display: '0'
 visibility: {  }
