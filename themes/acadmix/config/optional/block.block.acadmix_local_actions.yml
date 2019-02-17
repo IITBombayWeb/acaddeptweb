@@ -6,7 +6,7 @@ dependencies:
 id: acadmix_local_actions
 theme: acadmix
 region: content_top
-weight: -20
+weight: -30
 provider: null
 plugin: local_actions_block
 settings:

@@ -8,7 +8,7 @@ dependencies:
 id: acadmix_breadcrumbs
 theme: acadmix
 region: content_top
-weight: 0
+weight: -50
 provider: null
 plugin: system_breadcrumb_block
 settings:

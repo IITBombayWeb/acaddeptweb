@@ -19,12 +19,11 @@
 html,body {
   font-size: 100%;
   /*position: initial!important;*/
-   position: relative;
+   position: initial;
   overflow-x: hidden;
   /* font-family: "Open Sans", sans-serif; */
   font-family: "COOP-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
   min-height: 100%;
-  min-height: 100vh;
   background-color: #ffffff;
   line-height: 1.5;
   font-size: 1rem;
@@ -2255,7 +2254,6 @@ ul.page-numbers {
   background-size: contain;
   /*margin-bottom: 0;
   margin-top: 0;*/
-  position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
