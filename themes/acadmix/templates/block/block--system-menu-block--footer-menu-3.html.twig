@@ -36,15 +36,18 @@
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 <nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes|without('role', 'aria-labelledby') }}>
   {# Label. If not displayed, we still provide it for screen readers. #}
-  {% if not configuration.label_display %}
-    {% set title_attributes = title_attributes.addClass('visually-hidden') %}
-  {% endif %}
-  {{ title_prefix }}
-  <h3{{ title_attributes.setAttribute('id', heading_id) }} class="footer-menu-title">{{ configuration.label }}</h3>
-  {{ title_suffix }}
+  <div class="widget widget_nav_menu">
+    {% if not configuration.label_display %}
+      {% set title_attributes = title_attributes.addClass('visually-hidden') %}
+    {% endif %}
+    {{ title_prefix }}
+    <h3{{ title_attributes.setAttribute('id', heading_id) }} class="footer-menu-title">{{ configuration.label }}</h3>
+    {{ title_suffix }}
 
-  {# Menu. #}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+    {# Menu. #}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
+
 </nav>

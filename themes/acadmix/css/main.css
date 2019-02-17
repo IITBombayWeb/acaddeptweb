@@ -2324,12 +2324,14 @@ ul.page-numbers {
   color: #666;
   font-style: italic; }
 
-.powredby, .copyright {
+/*.powredby, .copyright {
   font-size: 12px; }
+*/
 
-  .footer-bar .copyright a, .powredby a {
+ /* .footer-bar .copyright a, .powredby a {
     color: #D30015;
   }
+  */
 .section-footer .footer-social-links .footer-social-nav{
   margin-top: 20px;
 }
