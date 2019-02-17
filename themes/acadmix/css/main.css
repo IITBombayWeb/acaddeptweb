@@ -2260,8 +2260,8 @@ ul.page-numbers {
 
 }
   .section-footer .footer-site-info{
-    padding-top: 55px;
-    padding-bottom: 55px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   @media (max-width: 767px) {
     footer.section-footer div.footer-site-info{
@@ -2794,8 +2794,8 @@ li > ol {
 }
 .widget ul li a{
   color: #666;
-  text-transform: capitalize;
-  font-weight: 700;
+ /* text-transform: capitalize;
+  font-weight: 700;*/
 }
 .widget ul li a:hover{
   color: #b70012;
