@@ -112,7 +112,7 @@
           {% endif %}
       </header>
  #}
-<header class="sabbi-site-head">
+    <header class="sabbi-site-head">
         <nav class="navbar navbar-white navbar-kawsa navbar-fixed-top " role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -122,46 +122,13 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button> 
-                   {#  <a class="navbar-brand" href="http://rushmore.wpcolorlab.com/" title="Academix – Multipurpose Researcher and Professor WordPress Theme" data-scroll="">
-                      <img src="./acadmix_assets/logo.png" alt="" class="img-responsive">
-                    </a> #}
                     {{ page.header }}
                </div>
                 <div class="navbar-collapse collapse sabbi-navbar-collapse  navbar-nav-hov_underline" id="navbar">
                     <div class="nav-btn-wrap">
-                      {# <a href="http://rushmore.wpcolorlab.com/future-member/" class="btn btn-primary">Join Research</a> #}
                       {{ page.header_search }}
                     </div>
-                    {#
-                    <ul id="menu-main-nav" class="nav navbar-nav navbar-right">
-                      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1617" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-4 current_page_item menu-item-1617 active">
-                        <a title="Home" href="http://rushmore.wpcolorlab.com/">Home</a>
-                      </li>
-                      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1624" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1624">
-                        <a title="Research" href="http://rushmore.wpcolorlab.com/research/">Research</a>
-                      </li>
-                      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1625" class="menu-item menu-item-type-post_type menu-item-object-team menu-item-has-children menu-item-1625 dropdown">
-                        <a title="People" href="http://rushmore.wpcolorlab.com/rushmore_teams/dr-rushmore/" data-toggle="dropdown" data-hover="dropdown" data-animations="zoomIn" class="dropdown-toggle" aria-haspopup="true">People <span class="caret"></span>
-                        </a>
-                        <ul role="menu" class="dropdown-menu">
-                          <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1626" class="menu-item menu-item-type-post_type menu-item-object-team menu-item-1626">
-                            <a title="Dr. Rushmore" href="http://rushmore.wpcolorlab.com/rushmore_teams/dr-rushmore/">Dr. Rushmore</a>
-                          </li>
-                          <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1623" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1623">
-                            <a title="Our Team" href="http://rushmore.wpcolorlab.com/our-team/">Our Team</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1700" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1700 dropdown">
-                        <a title="Publications" href="http://rushmore.wpcolorlab.com/#" data-toggle="dropdown" data-hover="dropdown" data-animations="zoomIn" class="dropdown-toggle" aria-haspopup="true">Publications <span class="caret"></span></a>
-                        <ul role="menu" class="dropdown-menu">
-                          <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1619" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1619"><a title="Books" href="http://rushmore.wpcolorlab.com/books/">Books</a></li>
-                          <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1622" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1622"><a title="Journal Articles" href="http://rushmore.wpcolorlab.com/journal-articles/">Journal Articles</a></li>
-                          <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1620" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1620"><a title="Conferences And Talks" href="http://rushmore.wpcolorlab.com/conferences-and-talks/">Conferences And Talks</a></li>
-                        </ul>
-                      </li>
-                    </ul> 
-                    #}
+ 
                     {{ page.navigation_collapsible }}            
         </div><!-- navbar-collapse collapse -->
             </div><!-- container -->
@@ -173,36 +140,24 @@
 
 {# Main #}
 {% block main %}
-  <div role="main" id="body" class="{{ main_container_class}} {{ container }} js-quickedit-main-content">
-
-
-      {% if page.breadcrumb %}
-      <div class="{{ container }}">
-       <div class="row clearfix">
-          <div class="col-md-12">
-             {{ page.breadcrumb }}
-          </div>
-        </div>
-      </div>
+  <main id="main-content" class="main-content" role="main">
+      {% if page.slider %}
+        {# <div class="{{ slider_wrapper }}"> #}
+          {{ page.slider }}      
+        {# </div> #}
       {% endif %}
-      
-    {% if is_front %}
-          {% if page.top1 or page.top2 or page.top3 or page.top4 or page.top_head or page.slider %}
-                <div class="container-fluid">
-                  {% if page.slider %}
-                    <div class="row">
-                      <div class="col-md-12">
-                        {{ page.slider }}
-                      </div>
-                    </div>
-                  {% endif %}
-                  {% if page.top_head %}
+
+    <div role="main" class="{{ main_container_class}} {{ container }} js-quickedit-main-content">
+
+          {% if page.top1 or page.top2 or page.top3 or page.top4 or page.top_head %}
+            
+                  {% if page.top_head or page.highlighted %}
                     <div class="row clearfix">
                       <div class="col-md-12 top-head animated fadeInDown delay-03s">
                         {% if page.highlighted %}
                             {{ page.highlighted }}
                         {% endif %}
-                        {{ page.top_head }}   
+                        {{ page.top_head }}
                       </div>
                     </div>
                   {% endif %}
@@ -282,78 +237,83 @@
                       {% endif %}
                     </div>
                   {% endif %}
-                </div> {# container-fluid #}
+               
+          {% endif %}      
+  
+            {% if page.breadcrumb %}
+                <div class="{{ container }}">
+                  <div class="row clearfix">
+                    <div class="col-md-12">
+                      {{ page.breadcrumb }}
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+
+            {# content top #}
+            {% if page.content_top and  page.highlighted %}
+              {% block content_top %}
+                  <div class="container">
+                    <div class="row clearfix">
+                      <div class="col-sm-12" role="heading">
+                        {{ page.highlighted }}
+                        {{ page.content_top }}
+                      </div>
+                    </div>
+                  </div>
+              {% endblock %}
             {% endif %}
 
   
+            {# Sidebar First #}
+            {% if page.sidebar_first or page.sidebar_second or page.content %}
+              <div class="{{ container }}">
+                <div class="row clearfix" id="main-wrapper">
+                    {% if page.sidebar_first %}
+                      {% block sidebar_first %}
+                        <aside class="col-sm-3" role="complementary">
+                          {{ page.sidebar_first }}
+                        </aside>
+                      {% endblock %}
+                    {% endif %}
 
-        
-    {% endif %}
+                    {# Content #}
+                    {%
+                      set content_classes = [
+                        page.sidebar_first and page.sidebar_second ? 'col-sm-6',
+                        page.sidebar_first and page.sidebar_second is empty ? 'col-sm-9',
+                        page.sidebar_second and page.sidebar_first is empty ? 'col-sm-9',
+                        page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
+                      ]
+                    %}
+                    <section{{ content_attributes.addClass(content_classes) }}>
+                        {# Help #}
+                        {% if page.help %}
+                            {{ page.help }}
+                        {% endif %}
 
-        {# content top #}
-      {% if page.content_top and not is_front %}
-        {% block content_top %}
-            <div class="container-fluid">
-              <div class="row clearfix">
-                <div class="col-sm-12" role="heading">
-                {{ page.highlighted }}
-                  {{ page.content_top }}
+                        {# Content #}
+                        {% if not is_front %}
+                          {% block content %}
+                            <a id="main-content"></a>
+                              {{ page.content }}
+                          {% endblock %}
+                        {% endif %}
+                    </section>
+
+                      {# Sidebar Second #}
+                      {% if page.sidebar_second %}
+                        {% block sidebar_second %}
+                          <aside class="col-sm-3" role="complementary">
+                            {{ page.sidebar_second }}
+                          </aside>
+                        {% endblock %}
+                      {% endif %}
                 </div>
               </div>
-            </div>
-        {% endblock %}
-      {% endif %}
-
-  
-        {# Sidebar First #}
-      {% if page.sidebar_first or page.sidebar_second or page.content %}
-        <div class="{{ container }}">
-          <div class="row clearfix" id="main-wrapper">
-              {% if page.sidebar_first %}
-                {% block sidebar_first %}
-                  <aside class="col-sm-3" role="complementary">
-                    {{ page.sidebar_first }}
-                  </aside>
-                {% endblock %}
-              {% endif %}
-
-              {# Content #}
-              {%
-                set content_classes = [
-                  page.sidebar_first and page.sidebar_second ? 'col-sm-6',
-                  page.sidebar_first and page.sidebar_second is empty ? 'col-sm-9',
-                  page.sidebar_second and page.sidebar_first is empty ? 'col-sm-9',
-                  page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
-                ]
-              %}
-              <section{{ content_attributes.addClass(content_classes) }}>
-                  {# Help #}
-                  {% if page.help %}
-                      {{ page.help }}
-                  {% endif %}
-
-                  {# Content #}
-                  {% if not is_front %}
-                    {% block content %}
-                      <a id="main-content"></a>
-                        {{ page.content }}
-                    {% endblock %}
-                  {% endif %}
-              </section>
-
-                {# Sidebar Second #}
-                {% if page.sidebar_second %}
-                  {% block sidebar_second %}
-                    <aside class="col-sm-3" role="complementary">
-                      {{ page.sidebar_second }}
-                    </aside>
-                  {% endblock %}
-                {% endif %}
-          </div>
-        </div>
-      {% endif %}
- 
-  </div>
+            {% endif %}
+    </div>
+  </main>
 {% endblock %}
 
 {% if page.footer1 or page.footer2 or page.footer3 or page.footer4 or page.footer_bar_left or page.footer_bar_right %}
@@ -391,7 +351,7 @@
               {% elseif page.footer3 and page.footer4 %}
                 <div class="col-lg-4 col-md-4">
               {% elseif page.footer1 or page.footer3 or page.footer4 %}
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-md-6">
               {% else  %}
                 <div class="col-lg-12">
             {% endif %}
@@ -411,7 +371,7 @@
               {% elseif page.footer2 and page.footer4 %}
                 <div class="col-lg-4 col-md-4">
               {% elseif page.footer1 or page.footer2 or page.footer4 %}
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-md-6">
               {% else  %}
                 <div class="col-lg-12">
             {% endif %}
@@ -431,7 +391,7 @@
               {% elseif page.footer2 and page.footer3 %}
                 <div class="col-lg-4 col-md-4">
               {% elseif page.footer1 or page.footer2 or page.footer3 %}
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-md-6">
               {% else  %}
                 <div class="col-lg-12">
             {% endif %}
@@ -445,7 +405,7 @@
       </div>
     {% endif %}
 
-  <div id="site-footer-bar" class="footer-bar">
+      {#   <div id="site-footer-bar" class="footer-bar">
             <div class="container">
                 <div class="row">
                   {% if page.footer_bar_left %}
@@ -457,6 +417,7 @@
                       </div>
                     {% endblock %}
                   {% endif %}
+
                   {% if page.footer_bar_right %}
                     {% block footer_bar_right %}
                       <div class="col-sm-4 ">
@@ -466,10 +427,44 @@
                       </div>
                     {% endblock %}
                   {% endif %}
+
                 </div>
             </div>
-    </div>
-</footer>
+          </div> #}
+
+
+      <div id="site-footer-bar" class="footer-bar">      
+        <div class="{{ container }}">
+          {% if page.footer_bar_left  or page.footer_bar_right %}
+            <div class="row footer-bottom">
+                
+                {% if page.footer_bar_left %}
+                  {% if page.footer_bar_left and page.footer_bar_right %}
+                    <div class="col-md-6">
+                  {% else %}
+                    <div class="col-md-12">
+                  {% endif %}
+                      <div class="copyright">
+                        {{ page.footer_bar_left }}    
+                      </div>
+                  </div>
+                {% endif %}
+                  
+                {% if page.footer_bar_right %}
+                  {% if page.footer_bar_left and page.footer_bar_right %}
+                    <div class="col-md-6">
+                  {% else %}
+                    <div class="col-md-12">
+                  {% endif %}
+                      <div class="footer-bootom-nav">
+                        {{ page.footer_bar_right }}
+                      </div>
+                    </div>
+                {% endif %}
+            </div>
+          {% endif %}
+
+        </div>
+      </div>   
+  </footer>
 {% endif %}
-</div>
-</div>
