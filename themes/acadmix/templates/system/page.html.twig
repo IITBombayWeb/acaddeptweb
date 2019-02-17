@@ -251,7 +251,7 @@
               {% endif %}
 
             {# content top #}
-            {% if page.content_top and  page.highlighted %}
+            {% if page.content_top or page.highlighted %}
               {% block content_top %}
                   <div class="container">
                     <div class="row clearfix">
