@@ -292,13 +292,11 @@
                             {{ page.help }}
                         {% endif %}
 
-                        {# Content #}
-                        {% if not is_front %}
+                        {# Content #}                      
                           {% block content %}
                             <a id="main-content"></a>
                               {{ page.content }}
-                          {% endblock %}
-                        {% endif %}
+                          {% endblock %}                       
                     </section>
 
                       {# Sidebar Second #}
