@@ -78,10 +78,20 @@
       theme_menu();
     });
 
-       $('#back-to-top').on('click', function(){
+
+    $('#back-to-top').on('click', function(){
       $('body,html').animate({
       scrollTop: 0
-      }, 600);
+      }, 800);
+    });
+    ///////////////////////////
+    // On Scroll
+    $(window).on('scroll', function() {
+      var wScroll = $(this).scrollTop();
+
+
+      // Back To Top Appear
+      wScroll > 100 ? $('#back-to-top').fadeIn() : $('#back-to-top').fadeOut();
     });
 
 

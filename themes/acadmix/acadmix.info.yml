@@ -32,7 +32,7 @@ regions:
   page_bottom: 'Page bottom'
 
 libraries:
-  - acadmix/academix-lib
+  - acadmix/acadmix-lib
   - acadmix/font-awesome
   - acadmix/webfonts
   - acadmix/smartmenus
