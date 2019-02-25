@@ -143,7 +143,9 @@
   <main id="main-content" class="main-content" role="main">
       {% if page.slider %}
         {# <div class="{{ slider_wrapper }}"> #}
-          {{ page.slider }}      
+           <div class="{{ container }}">
+            {{ page.slider }}      
+          </div>
         {# </div> #}
       {% endif %}
 
