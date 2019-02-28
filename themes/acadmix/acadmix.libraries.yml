@@ -1,4 +1,4 @@
-academix-lib:
+acadmix-lib:
   css:
     theme:
       includes/others/bootstrap-dropdownhover.min.css: {}

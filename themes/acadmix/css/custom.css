@@ -95,14 +95,19 @@ a.logo{
 
 /* header-end */
 
-.region-footer-bar-left ul.menu li{
-  display: inline-block;
+
+.region-footer-bar-left ul, .region-footer-bar-right ul{
+  list-style-type: none;
 }
 
-.region-footer-bar-left ul.menu li:hover  a{
+.region-footer-bar-left ul.menu li, .region-footer-bar-right ul.menu li{
+  display: inline-block;
+  padding: 5px;
+}
+
+.region-footer-bar-left ul.menu li:hover a, .region-footer-bar-right ul.menu li:hover a{
   background-color: transparent!important;
 }
-
 
 
 

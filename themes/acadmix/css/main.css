@@ -19,12 +19,11 @@
 html,body {
   font-size: 100%;
   /*position: initial!important;*/
-   position: relative;
+   position: initial;
   overflow-x: hidden;
   /* font-family: "Open Sans", sans-serif; */
   font-family: "COOP-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
   min-height: 100%;
-  min-height: 100vh;
   background-color: #ffffff;
   line-height: 1.5;
   font-size: 1rem;
@@ -2255,15 +2254,14 @@ ul.page-numbers {
   background-size: contain;
   /*margin-bottom: 0;
   margin-top: 0;*/
-  position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
 
 }
   .section-footer .footer-site-info{
-    padding-top: 55px;
-    padding-bottom: 55px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   @media (max-width: 767px) {
     footer.section-footer div.footer-site-info{
@@ -2326,12 +2324,14 @@ ul.page-numbers {
   color: #666;
   font-style: italic; }
 
-.powredby, .copyright {
+/*.powredby, .copyright {
   font-size: 12px; }
+*/
 
-  .footer-bar .copyright a, .powredby a {
+ /* .footer-bar .copyright a, .powredby a {
     color: #D30015;
   }
+  */
 .section-footer .footer-social-links .footer-social-nav{
   margin-top: 20px;
 }
@@ -2794,8 +2794,8 @@ li > ol {
 }
 .widget ul li a{
   color: #666;
-  text-transform: capitalize;
-  font-weight: 700;
+ /* text-transform: capitalize;
+  font-weight: 700;*/
 }
 .widget ul li a:hover{
   color: #b70012;
