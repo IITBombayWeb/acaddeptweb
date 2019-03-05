@@ -243,33 +243,33 @@
           {% endif %}      
   
             {% if page.breadcrumb %}
-                <div class="{{ container }}">
+               
                   <div class="row clearfix">
                     <div class="col-md-12">
                       {{ page.breadcrumb }}
                     </div>
                   </div>
-                </div>
+                
               {% endif %}
 
             {# content top #}
             {% if page.content_top or page.highlighted %}
               {% block content_top %}
-                  <div class="container">
+                
                     <div class="row clearfix">
                       <div class="col-sm-12" role="heading">
                         {{ page.highlighted }}
                         {{ page.content_top }}
                       </div>
                     </div>
-                  </div>
+                
               {% endblock %}
             {% endif %}
 
   
             {# Sidebar First #}
             {% if page.sidebar_first or page.sidebar_second or page.content %}
-              <div class="{{ container }}">
+              
                 <div class="row clearfix" id="main-wrapper">
                     {% if page.sidebar_first %}
                       {% block sidebar_first %}
@@ -310,7 +310,7 @@
                         {% endblock %}
                       {% endif %}
                 </div>
-              </div>
+            
             {% endif %}
     </div>
   </main>
