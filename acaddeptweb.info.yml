@@ -62,7 +62,10 @@ dependencies:
   - migrate_tools
   - migrate_plus
   - migrate_source_csv
-  - slick
+  - slick_ui
+  - slick_views
+  - slick_extras
+  - slick_devel
   - ds
   - libraries
   - ldap_authentication
