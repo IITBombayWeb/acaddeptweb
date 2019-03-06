@@ -73,6 +73,7 @@ dependencies:
   - ldap_help
   - ldap_query
   - authorization_drupal_roles
+  - views_bootstrap
 themes:
   - bartik
   - seven

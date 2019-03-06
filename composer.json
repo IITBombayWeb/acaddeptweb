@@ -28,6 +28,7 @@
       "drupal/paragraphs": "~1.5",
       "drupal/ldap": "~3.0",
       "drupal/authorization": "~1.0",
+      "drupal/views_bootstrap": "~4.1",
       "drupal/config_sync": "~2.0",
       "drupal/config_merge_filter": "~1.0",
       "drupal/config_distro_ignore": "~1.0",
