@@ -2,7 +2,7 @@ name: acaddeptweb
 core: 8.x
 type: profile
 description: 'Academic Department Website Distribution'
-version: '8.1.0'
+version: '8.6.x'
 
 distribution:
   name: 'Academic Department Website Distribution'
@@ -43,6 +43,7 @@ dependencies:
   - views_ui
   - tour
   - automated_cron
+  - responsive_image
  #contrib
   - config_sync
   - config_merge_filter
