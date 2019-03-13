@@ -75,6 +75,37 @@ function acaddeptweb_install() {
   // 'name' => 'term 1',
   // 'vid' => 'department',
   // ])->save();
+
+  $event_type_vocabulary = 'event_type_';
+  $event_type = ['Conferences', 'Seminars', 'Meetings'];
+  foreach ($event_type as $event) {
+    $term = Term::create(array(
+      'parent' => array(),
+      'name' => $event,
+      'vid' => $event_type_vocabulary,
+    ))->save();
+  }
+
+  $employmentcateg_vocabulary = 'employment_category';
+  $employmentcateg = ['Core Faculty', 'Adjunct Faculty', 'Associated Faculty', 'Visiting Faculty', 'Retired Faculty', 'Emeritus Fellow', 'Institute Distinguished Faculty', 'Emeritus Professor'];
+  foreach ($employmentcateg as $empcateg) {
+    $term = Term::create(array(
+    'parent' => array(),
+    'name' => $empcateg,
+    'vid' => $employmentcateg_vocabulary,
+    ))->save();
+  }
+
+  $news_type_vocabulary = 'news_type';
+  $news_type = ['General News', 'Technical News', 'National News', 'International News', 'Education news', 'Arts and culture news', 'Sports news', 'Health news', 'Entertainment and celebrity news', 'Business and financial news'];
+  foreach ($news_type as $news) {
+    $term = Term::create(array(
+      'parent' => array(),
+      'name' => $news,
+      'vid' => $news_type_vocabulary,
+    ))->save();
+  }
+
 }
 
 /**
