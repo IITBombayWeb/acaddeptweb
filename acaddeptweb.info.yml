@@ -68,7 +68,7 @@ dependencies:
   - slick_extras
   - slick_devel
   - ds
-  - Spamspan
+  - spamspan
   - libraries
   - ldap_authentication
   - ldap_authorization
