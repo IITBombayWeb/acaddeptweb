@@ -6,7 +6,6 @@ dependencies:
   module:
     - system
     - views
-    - acadmix_event
   theme:
     - acadmix
 id: views_block__event_block_block_1

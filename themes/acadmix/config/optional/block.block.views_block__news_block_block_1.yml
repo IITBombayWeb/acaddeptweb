@@ -6,7 +6,6 @@ dependencies:
   module:
     - system
     - views
-    - acadmix_news
   theme:
     - acadmix
 id: views_block__news_block_block_1

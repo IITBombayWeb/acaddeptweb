@@ -31,6 +31,7 @@
       "drupal/field_permissions": "~1.0",
       "drupal/spamspan": "~1.0",
       "drupal/views_bootstrap": "~4.1",
+      "drupal/linked_field": "~1.1",
       "drupal/config_sync": "~2.0",
       "drupal/config_merge_filter": "~1.0",
       "drupal/config_distro_ignore": "~1.0",
