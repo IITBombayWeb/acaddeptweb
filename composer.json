@@ -3,8 +3,6 @@
     "description": "Academic Depatment Website Distribution Profile 6.0",
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
-    "minimum-stability": "stable",
-    "prefer-stable": true,
     "require": {
       "composer/installers": "^1.0.24",
       "drupal/admin_toolbar": "~1.24",
