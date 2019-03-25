@@ -43,7 +43,6 @@ dependencies:
   - views_ui
   - tour
   - automated_cron
-  - responsive_image
  #contrib
   - config_sync
   - config_merge_filter
@@ -70,6 +69,7 @@ dependencies:
   - ds
   - spamspan
   - libraries
+  - ldap_servers
   - ldap_authentication
   - ldap_authorization
   - ldap_help
