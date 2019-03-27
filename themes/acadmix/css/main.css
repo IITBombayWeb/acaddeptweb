@@ -1505,10 +1505,17 @@ a.link-with-icon i.fa {
   .news-card .stage-title {
     font-size: 16px;
     font-size: 1.14286rem;
-    margin-top: 0; }
+    margin-top: 0; 
+  }
   .news-card .date {
     color: #666666;
-    font-style: italic; }
+    font-style: italic; 
+  }
+
+  .news-card .date:before {
+    margin-right: 5px;
+    }
+
 ul.list-unstyled.lst_news_list {
     margin: 0;
     padding: 0;
