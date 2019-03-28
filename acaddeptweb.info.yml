@@ -76,6 +76,7 @@ dependencies:
   - ldap_query
   - authorization_drupal_roles
   - views_bootstrap
+  - twig_field_value
 themes:
   - bartik
   - seven
