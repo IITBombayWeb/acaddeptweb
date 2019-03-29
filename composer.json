@@ -1,6 +1,6 @@
 {
   "name": "iitbombayweb/acaddeptweb",
-  "description": "Academic Depatment Website Distribution Profile 6.0",
+  "description": "Academic depatment website distribution profile",
   "type": "drupal-profile",
   "license": "GPL-2.0-or-later",
   "require": {
@@ -14,7 +14,7 @@
     "drupal/search_api_solr": "~2.0",
     "drupal/search_api_autocomplete": "~1.0",
     "drupal/facets": "~1.0",
-    "drupal/devel": "~2.0",
+    "drupal/devel": "~1.0",
     "drupal/migrate_tools": "~4.0",
     "drupal/migrate_plus": "~4.0",
     "drupal/migrate_source_csv": "~2.2",
