@@ -11,19 +11,17 @@ include_once __DIR__ . '/src/Form/AcadmixDistributionOptionalModulesForm.php';
 
 // Add any custom code here like hook implementations.
 //function acaddeptweb_form_install_configure_form_alter(&$form, FormStateInterface $form_state)
-function acaddeptweb_install_tasks_alter(&$tasks, $install_state) {
-  // Replace the entire site configuration form provided by Drupal core
-  // with a custom callback function defined by this installation profile.
-  //$tasks['install_configure_form']['function'] = 'acadmix_distribution_optional_modules_form';
-  //$tasks=array();
-  $tasks['acadmix_distribution_optional_modules_form'] = [
-      'display_name' => t('Install Acadmix Modules'),
-      'type' => 'form',
-      'function' => 'Drupal\acaddeptweb\Form\AcadmixDistributionOptionalModulesForm',
-    ];
-  $tasks = acaddeptweb_array_move('acadmix_distribution_optional_modules_form',11,$tasks);
-  return $tasks;
-}
+// function acaddeptweb_install_tasks_alter(&$tasks, $install_state) {
+//   // Replace the entire site configuration form provided by Drupal core
+//   // with a custom callback function defined by this installation profile.
+//   $tasks['acadmix_distribution_optional_modules_form'] = [
+//       'display_name' => t('Install Acadmix Modules'),
+//       'type' => 'form',
+//       'function' => 'Drupal\acaddeptweb\Form\AcadmixDistributionOptionalModulesForm',
+//     ];
+//   $tasks = acaddeptweb_array_move('acadmix_distribution_optional_modules_form',11,$tasks);
+//   return $tasks;
+// }
 
 function acaddeptweb_array_splice_assoc(&$input, $offset, $length, $replacement) {
         $replacement = (array) $replacement;

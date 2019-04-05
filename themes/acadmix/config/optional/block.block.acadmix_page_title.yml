@@ -6,7 +6,7 @@ dependencies:
 id: acadmix_page_title
 theme: acadmix
 region: content_top
-weight: 0
+weight: -50
 provider: null
 plugin: page_title_block
 settings:
