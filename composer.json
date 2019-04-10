@@ -38,7 +38,11 @@
     "drupal/config_sync": "~2.0",
     "drupal/config_merge_filter": "~1.0",
     "drupal/config_distro_ignore": "~1.0",
-    "drupal/config_update_ui": "~1.6"
+    "drupal/config_update_ui": "~1.6",
+    "solarium/solarium": "~4.2",
+    "bower-asset/slick-carousel": "~1.0",
+    "npm-asset/blazy": "~1.0",
+    "npm-asset/datatables": "1.9.4"
   },
   "repositories": {
     "drupal": {
@@ -48,6 +52,7 @@
   },
   "extra": {
     "installer-paths": {
+      "docroot/libraries/slick": ["bower-asset/slick-carousel"]
     }
   }
 }
