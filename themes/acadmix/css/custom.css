@@ -353,11 +353,28 @@ a.logo{
   }
 }
 
-
-
-
-
 /*main navigation dropdown end*/
+
+
+
+/*node-content-section start*/
+
+  .content-center{
+    margin: 0 auto;
+    width: 70%;
+  }
+
+
+  @media screen and (max-width: 800px){
+    .content-center{
+      margin: 0 auto;
+      width: 90%;
+    }
+  }
+
+/*node-content-section end*/
+
+
 
 
 /* footer section */
