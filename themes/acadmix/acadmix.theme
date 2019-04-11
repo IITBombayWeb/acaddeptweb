@@ -37,6 +37,7 @@ $path_to_acadmix = drupal_get_path('theme', 'acadmix');
 
 
 function acadmix_preprocess_block(&$variables) {
+global $base_url, $base_path;
   switch ($variables['base_plugin_id']) {
     case 'system_branding_block':
       $variables['site_logo'] = '';
