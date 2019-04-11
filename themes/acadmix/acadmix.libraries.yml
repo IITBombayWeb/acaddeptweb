@@ -43,6 +43,5 @@ global-styling:
       css/custom.css: {}
   js:
     js/custom.js: {}
-    js/scroll.js: {}
   dependencies:
     - core/jquery
