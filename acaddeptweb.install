@@ -77,7 +77,7 @@ function acaddeptweb_install() {
   // ])->save();
 
   $event_type_vocabulary = 'event_type_';
-  $event_type = ['Conferences', 'Seminars', 'Meetings'];
+  $event_type = ['Conferences', 'Seminars', 'Workshop', 'Short-term Course', 'Cultural'];
   foreach ($event_type as $event) {
     $term = Term::create(array(
       'parent' => array(),
