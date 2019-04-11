@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+  {% if content.field_work|field_value is not empty %}
+ */
+
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+  {{ title_suffix.contextual_links }}
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <h4 class="gimps-title text-center">{{ ds_content.field_rd_proj_title }}</h4>
+    </div>
+  </div>
+  <div class="row">
+    {%
+      set rd_classes = [
+      ds_content.field_rd_proj_image|field_value and ds_content.field_rd_proj_details|field_value ? 'col-sm-6',
+      ds_content.field_rd_proj_image|field_value and ds_content.field_rd_proj_details|field_value is empty ? 'col-sm-12',
+      ds_content.field_rd_proj_details|field_value and ds_content.field_rd_proj_image|field_value is empty ? 'col-sm-12'
+      ]
+    %}
+
+    <div{{ content_attributes.addClass(rd_classes) }}>
+      {{ ds_content.field_rd_proj_image }}
+    </div>
+    
+    <div{{ content_attributes.addClass(rd_classes) }}>
+      {{ ds_content.field_rd_proj_details }}
+    </div>
+
+
+  </div>
+
+</{{ ds_content_wrapper }}>

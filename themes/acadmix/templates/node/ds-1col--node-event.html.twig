@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+  {{ title_suffix.contextual_links }}
+  <article class="sabbi-events-item">
+    <div class="content-center events-item-meta">  
+      {{ ds_content }}
+    </div>
+  </article>
+
+</{{ ds_content_wrapper }}>
+
+
+
+
+
+
+
+
+{#  {{ ds_content.field_event_venue }}
+    {{ ds_content.field_start_date_and_time }}
+    {{ ds_content.field_end_date_and_time }}
+    {{ ds_content.field_title_of_seminar_conferenc }}
+    {{ ds_content.field_name_of_speak_and_affiliat }}
+    {{ ds_content.field_event_types }}
+    {{ ds_content.body }} 
+#}
