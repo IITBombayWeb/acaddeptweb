@@ -50,5 +50,8 @@
     "installer-paths": {
       "docroot/libraries/slick": ["bower-asset/slick-carousel"]
     }
+  },
+  "scripts": {
+    "post-update-cmd": "rm -rf docroot/libraries/slick-carousel"
   }
 }
