@@ -46,16 +46,5 @@
     "bower-asset/slick-carousel": "~1.0",
     "npm-asset/blazy": "~1.0",
     "npm-asset/datatables": "1.9.4"
-  },
-  "repositories": {
-    "drupal": {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    }
-  },
-  "extra": {
-    "installer-paths": {
-      "docroot/libraries/slick": ["bower-asset/slick-carousel"]
-    }
   }
 }
