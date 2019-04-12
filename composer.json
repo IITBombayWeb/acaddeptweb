@@ -48,6 +48,7 @@
   },
   "extra": {
     "installer-paths": {
+      "docroot/libraries/{$name}": ["type:drupal-library", "type:bower-asset", "type:npm-asset"],
       "docroot/libraries/slick": ["bower-asset/slick-carousel"]
     }
   }
