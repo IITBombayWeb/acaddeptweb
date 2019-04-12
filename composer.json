@@ -52,6 +52,8 @@
     }
   },
   "scripts": {
-    "post-update-cmd": "rm -rf docroot/libraries/slick-carousel"
+    "remove-extra-libraries": [
+        "rm -rf docroot/libraries/slick-carousel"
+    ]
   }
 }
