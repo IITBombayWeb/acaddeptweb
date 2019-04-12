@@ -4,7 +4,6 @@
   "type": "drupal-profile",
   "license": "GPL-2.0-or-later",
   "require": {
-    "composer/installers": "^1.0.24",
     "drupal/admin_toolbar": "~1.24",
     "drupal/coffee": "~1.0",
     "drupal/name": "~1.0",
@@ -47,15 +46,14 @@
     "npm-asset/blazy": "~1.0",
     "npm-asset/datatables": "1.9.4"
   },
-  "repositories": {
-    "drupal": {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    }
-  },
   "extra": {
     "installer-paths": {
       "docroot/libraries/slick": ["bower-asset/slick-carousel"]
     }
+  },
+  "scripts": {
+    "remove-extra-libraries": [
+        "rm -rf docroot/libraries/slick-carousel"
+    ]
   }
 }
