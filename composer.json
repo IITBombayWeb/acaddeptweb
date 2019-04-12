@@ -5,6 +5,7 @@
   "license": "GPL-2.0-or-later",
   "require": {
     "composer/installers": "^1.0.24",
+    "oomphinc/composer-installers-extender": "^1.1",
     "drupal/admin_toolbar": "~1.24",
     "drupal/coffee": "~1.0",
     "drupal/name": "~1.0",
@@ -46,5 +47,10 @@
     "bower-asset/slick-carousel": "~1.0",
     "npm-asset/blazy": "~1.0",
     "npm-asset/datatables": "1.9.4"
+  },
+  "extra": {
+    "installer-paths": {
+      "docroot/libraries/slick": ["bower-asset/slick-carousel"]
+    }
   }
 }
