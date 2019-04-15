@@ -2284,7 +2284,7 @@ ul.page-numbers {
   .section-footer .widget_media_image{
     margin-bottom: 25px;
   }
-  .section-footer .widget-title {
+  .section-footer .widget-title, .section-footer .block-title{
     margin: 15px 0 10px;
     font-size: 1rem;
    }
@@ -2295,7 +2295,7 @@ ul.page-numbers {
 
   .section-footer .footer-bar {
     background-color: #e6ebef;
-    padding: 20px 0px; }
+    padding: 10px 0px; }
   .section-footer .list-footer-nav a {
     color: #000000; }
   .section-footer .__ci_num {
