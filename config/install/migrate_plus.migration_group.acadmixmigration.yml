@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: acadmixmigration
-label: Acadmix Migtaion
+label: Acadmix Migration
 description: 'Acadmix data migrations for department distribution.'
 source_type: 'CSV files'
 module: null
