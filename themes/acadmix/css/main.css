@@ -924,8 +924,9 @@ h1.academix-logo {
   .navbar-brand {
     max-width: 260px;
   }
-  .navbar-kawsa .nav-btn-wrap {
-    display: none; } }
+
+
+  }
 
 .navbar-nav-hov_underline .navbar-nav li.active a {
   background: transparent;

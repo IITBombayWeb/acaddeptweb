@@ -38,6 +38,7 @@
     "drupal/bootstrap_layouts": "~5.1",
     "drupal/better_exposed_filters": "~3.0",
     "drupal/nodeorder": "~1.0",
+    "drupal/menu_per_role":"~1.0",
     "drupal/config_sync": "~2.0",
     "drupal/config_merge_filter": "~1.0",
     "drupal/config_distro_ignore": "~1.0",
