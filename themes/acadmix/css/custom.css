@@ -574,20 +574,6 @@ ol.breadcrumb li:first-child::before {
   -webkit-transition:all 0.3s ease-in-out;
 }
 
-
-
-.ol-timeline {
-    list-style: disc;
-    margin-top: 5em;
-    padding-left: 6em;
-    position: relative;
-}
-
-.ol-timeline:before{
-  left: 3em;
-}
-
-
 /* no transition on .isotope container */
 
 .isotope .isotope-item {

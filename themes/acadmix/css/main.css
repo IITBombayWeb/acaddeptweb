@@ -1250,26 +1250,30 @@ h1.academix-logo {
   margin-bottom: 15px; }
 
 .ol-timeline {
-  list-style: none;
-  margin-top: 120px;
-  padding-left: 157px;
-  position: relative; }
+  list-style: disc;
+  margin-top: 40px;
+  padding-left: 6em;
+  position: relative;
+}
   .ol-timeline:before {
     content: '';
     position: absolute;
     width: 8px;
-    height: 94%;
-    margin-top: -7px;
+    height: 100%;
+   /* margin-top: -7px;*/
     top: 5px;
-    left: 133px;
+    left: 3em;
     border-radius: 2px;
     background-color: #f5f3f4;
     transition: all .3s ease;
     border: 1px solid transparent;
-    transform: scaleY(1.5); }
+    transform: scaleY(1.1); 
+  }
+  
   .ol-timeline li.tl-item {
     position: relative;
-    margin-bottom: 45px; }
+    margin-bottom: 15px; 
+  }
     .ol-timeline li.tl-item:first-child .item-section:after {
       background-color: #6fc75b; }
     .ol-timeline li.tl-item:first-child .title {
@@ -2049,7 +2053,8 @@ ul.list-unstyled.lst_news_list {
   margin-bottom: 15px; }
 
 .appoint-timeline-holder {
-  margin-top: 75px; }
+  margin-top: 2em; 
+}
 
 .sabbi-page-header {
   margin-top: 75px; }
