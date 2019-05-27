@@ -200,7 +200,7 @@ a.logo{
           width: auto;
           margin: 0;
           background: none;
-          float: right;
+          /*float: right;*/
         }
         .region-navigation-collapsible ul {
           border: 0;
