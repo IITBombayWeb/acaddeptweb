@@ -12,6 +12,19 @@
   margin-top: 3em;
 }
 
+#main-content-with-nav {
+    z-index: 1;
+    background-color: #ffffff;
+    position: relative;
+    margin-top: 4.5em;
+}
+
+@media screen and (max-width: 767px) {
+  #main-content-with-nav {
+    margin-top: 3em;
+    margin-bottom: 0px!important;
+  }
+}
 /* header */
 #navbar {
   -webkit-transition: all 0.5s;
