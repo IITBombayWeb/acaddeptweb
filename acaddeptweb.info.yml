@@ -77,6 +77,7 @@ dependencies:
   - views_bootstrap
   - twig_field_value
   - pathauto
+  - nodeorder
 themes:
   - bartik
   - seven
