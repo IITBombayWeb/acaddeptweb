@@ -53,6 +53,7 @@
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 {% set main_container_class = is_admin ? 'main-container-admin' : 'main-container' %}
+{% set main_content_id = page.navigation_collapsible ? 'main-content-with-nav' : 'main-content' %}
 {# Navbar #}
 {% if page.header or page.header_search or page.navigation_collapsible %}
   {% block navbar %}
@@ -142,7 +143,7 @@
 
 {# Main #}
 {% block main %}
-  <main id="main-content" class="main-content" role="main">
+  <main id="{{ main_content_id }}" class="main-content" role="main">
       {% if page.slider %}
         {# <div class="{{ slider_wrapper }}"> #}
            <div class="{{ container }}">
