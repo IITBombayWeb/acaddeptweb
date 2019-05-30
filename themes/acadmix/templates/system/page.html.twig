@@ -113,6 +113,7 @@
           {% endif %}
       </header>
  #}
+<div id="page">
     <header class="sabbi-site-head">
         <nav class="navbar navbar-white navbar-kawsa navbar-fixed-top " role="navigation">
             <div class="container">
@@ -139,335 +140,336 @@
     </header><!-- #masthead --> 
 
    {% endblock %} {#end block navbar #}
-{% endif %} {# end if page.header or..... #}
+  {% endif %} {# end if page.header or..... #}
 
 {# Main #}
-{% block main %}
-  <main id="{{ main_content_id }}" class="main-content" role="main">
-      {% if page.slider %}
-        {# <div class="{{ slider_wrapper }}"> #}
-           <div class="{{ container }}">
-            {{ page.slider }}      
-          </div>
-        {# </div> #}
-      {% endif %}
+  {% block main %}
+    <main id="{{ main_content_id }}" class="main-content" role="main">
+        {% if page.slider %}
+          {# <div class="{{ slider_wrapper }}"> #}
+             <div class="{{ container }}">
+              {{ page.slider }}      
+            </div>
+          {# </div> #}
+        {% endif %}
 
-    <div role="main" class="{# {{ main_container_class}} #} {{ container }} js-quickedit-main-content">
+      <div role="main" class="{# {{ main_container_class}} #} {{ container }} js-quickedit-main-content">
 
-          {% if page.top1 or page.top2 or page.top3 or page.top4 or page.top_head %}
-            
-                  {% if page.top_head or page.highlighted %}
-                    <div class="row clearfix">
-                      <div class="col-md-12 top-head animated fadeInDown delay-03s">
-                        {% if page.highlighted %}
-                            {{ page.highlighted }}
+            {% if page.top1 or page.top2 or page.top3 or page.top4 or page.top_head %}
+              
+                    {% if page.top_head or page.highlighted %}
+                      <div class="row clearfix">
+                        <div class="col-md-12 top-head animated fadeInDown delay-03s">
+                          {% if page.highlighted %}
+                              {{ page.highlighted }}
+                          {% endif %}
+                          {{ page.top_head }}
+                        </div>
+                      </div>
+                    {% endif %}
+                    
+                    {% if page.top1 or page.top2 or page.top3 or page.top4 %}
+                      <div class="row clearfix">
+                        {% if page.top1 %}
+                          {% if page.top2 and page.top3 and page.top4 %}
+                            <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
+                            {% elseif page.top2 and page.top3 %}
+                              <div class="col-lg-4 col-md-4 top-wrapper">
+                            {% elseif page.top2 and page.top4 %}
+                              <div class="col-lg-4 col-md-4 top-wrapper">
+                            {% elseif page.top3 and page.top4 %}
+                              <div class="col-lg-4 col-md-4 top-wrapper">
+                            {% elseif page.top2 or page.top3 or page.top4 %}
+                              <div class="col-lg-6 col-md-6 top-wrapper">
+                            {% else  %}
+                              <div class="col-lg-12">
+                          {% endif %}
+                            <div class="top1">{{ page.top1 }}</div>
+                            </div>
                         {% endif %}
-                        {{ page.top_head }}
+
+                        {% if page.top2 %}
+                          {% if page.top1 and page.top3 and page.top4 %}
+                            <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
+                            {% elseif page.top1 and page.top3 %}
+                              <div class="col-lg-4 col-md-4 top-wrapper">
+                            {% elseif page.top1 and page.top4 %}
+                              <div class="col-lg-4 col-md-4 top-wrapper">
+                            {% elseif page.top3 and page.top4 %}
+                              <div class="col-lg-4 col-md-4 top-wrapper">
+                            {% elseif page.top1 or page.top3 or page.top4 %}
+                              <div class="col-lg-6 col-md-6 top-wrapper">
+                            {% else  %}
+                              <div class="col-lg-12">
+                          {% endif %}
+                            <div class="top2">{{ page.top2 }}</div>
+                          </div>
+                        {% endif %}
+
+                        {% if page.top3 %}
+                          {% if page.top1 and page.top2 and page.top4 %}
+                            <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
+                            {% elseif page.top1 and page.top2 %}
+                              <div class="col-lg-4 col-md-4 top-wrapper">
+                            {% elseif page.top1 and page.top4 %}
+                              <div class="col-lg-4 col-md-4 top-wrapper">
+                            {% elseif page.top2 and page.top4 %}
+                              <div class="col-lg-4 col-md-4 top-wrapper">
+                            {% elseif page.top1 or page.top2 or page.top4 %}
+                              <div class="col-lg-6 col-md-6 top-wrapper">
+                            {% else  %}
+                              <div class="col-lg-12">
+                          {% endif %}
+                            <div class="top3">{{ page.top3 }}</div>
+                            </div>
+                        {% endif %}
+
+                        {% if page.top4 %}
+                          {% if page.top1 and page.top2 and page.top3 %}
+                            <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
+                            {% elseif page.top1 and page.top2 %}
+                              <div class="col-lg-4 col-md-4 top-wrapper">
+                            {% elseif page.top1 and page.top3 %}
+                              <div class="col-lg-4 col-md-4 top-wrapper">
+                            {% elseif page.top2 and page.top3 %}
+                              <div class="col-lg-4 col-md-4 top-wrapper">
+                            {% elseif page.top1 or page.top2 or page.top3 %}
+                              <div class="col-lg-6 col-md-6 top-wrapper">
+                            {% else  %}
+                              <div class="col-lg-12">
+                          {% endif %}
+                            <div class="top4">{{ page.top4 }}</div>
+                            </div>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                 
+            {% endif %}      
+    
+              {% if page.breadcrumb %}
+                 
+                    <div class="row clearfix">
+                      <div class="col-md-12">
+                        {{ page.breadcrumb }}
                       </div>
                     </div>
-                  {% endif %}
                   
-                  {% if page.top1 or page.top2 or page.top3 or page.top4 %}
-                    <div class="row clearfix">
-                      {% if page.top1 %}
-                        {% if page.top2 and page.top3 and page.top4 %}
-                          <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
-                          {% elseif page.top2 and page.top3 %}
-                            <div class="col-lg-4 col-md-4 top-wrapper">
-                          {% elseif page.top2 and page.top4 %}
-                            <div class="col-lg-4 col-md-4 top-wrapper">
-                          {% elseif page.top3 and page.top4 %}
-                            <div class="col-lg-4 col-md-4 top-wrapper">
-                          {% elseif page.top2 or page.top3 or page.top4 %}
-                            <div class="col-lg-6 col-md-6 top-wrapper">
-                          {% else  %}
-                            <div class="col-lg-12">
-                        {% endif %}
-                          <div class="top1">{{ page.top1 }}</div>
-                          </div>
-                      {% endif %}
+                {% endif %}
 
-                      {% if page.top2 %}
-                        {% if page.top1 and page.top3 and page.top4 %}
-                          <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
-                          {% elseif page.top1 and page.top3 %}
-                            <div class="col-lg-4 col-md-4 top-wrapper">
-                          {% elseif page.top1 and page.top4 %}
-                            <div class="col-lg-4 col-md-4 top-wrapper">
-                          {% elseif page.top3 and page.top4 %}
-                            <div class="col-lg-4 col-md-4 top-wrapper">
-                          {% elseif page.top1 or page.top3 or page.top4 %}
-                            <div class="col-lg-6 col-md-6 top-wrapper">
-                          {% else  %}
-                            <div class="col-lg-12">
-                        {% endif %}
-                          <div class="top2">{{ page.top2 }}</div>
+              {# content top #}
+              {% if page.content_top or page.highlighted %}
+                {% block content_top %}
+                  
+                      <div class="row clearfix">
+                        <div class="col-sm-12" role="heading">
+                          {{ page.highlighted }}
+                          {{ page.content_top }}
                         </div>
-                      {% endif %}
-
-                      {% if page.top3 %}
-                        {% if page.top1 and page.top2 and page.top4 %}
-                          <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
-                          {% elseif page.top1 and page.top2 %}
-                            <div class="col-lg-4 col-md-4 top-wrapper">
-                          {% elseif page.top1 and page.top4 %}
-                            <div class="col-lg-4 col-md-4 top-wrapper">
-                          {% elseif page.top2 and page.top4 %}
-                            <div class="col-lg-4 col-md-4 top-wrapper">
-                          {% elseif page.top1 or page.top2 or page.top4 %}
-                            <div class="col-lg-6 col-md-6 top-wrapper">
-                          {% else  %}
-                            <div class="col-lg-12">
-                        {% endif %}
-                          <div class="top3">{{ page.top3 }}</div>
-                          </div>
-                      {% endif %}
-
-                      {% if page.top4 %}
-                        {% if page.top1 and page.top2 and page.top3 %}
-                          <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
-                          {% elseif page.top1 and page.top2 %}
-                            <div class="col-lg-4 col-md-4 top-wrapper">
-                          {% elseif page.top1 and page.top3 %}
-                            <div class="col-lg-4 col-md-4 top-wrapper">
-                          {% elseif page.top2 and page.top3 %}
-                            <div class="col-lg-4 col-md-4 top-wrapper">
-                          {% elseif page.top1 or page.top2 or page.top3 %}
-                            <div class="col-lg-6 col-md-6 top-wrapper">
-                          {% else  %}
-                            <div class="col-lg-12">
-                        {% endif %}
-                          <div class="top4">{{ page.top4 }}</div>
-                          </div>
-                      {% endif %}
-                    </div>
-                  {% endif %}
-               
-          {% endif %}      
-  
-            {% if page.breadcrumb %}
-               
-                  <div class="row clearfix">
-                    <div class="col-md-12">
-                      {{ page.breadcrumb }}
-                    </div>
-                  </div>
-                
+                      </div>
+                  
+                {% endblock %}
               {% endif %}
 
-            {# content top #}
-            {% if page.content_top or page.highlighted %}
-              {% block content_top %}
+    
+              {# Sidebar First #}
+              {% if page.sidebar_first or page.sidebar_second or page.content %}
                 
-                    <div class="row clearfix">
-                      <div class="col-sm-12" role="heading">
-                        {{ page.highlighted }}
-                        {{ page.content_top }}
-                      </div>
-                    </div>
-                
-              {% endblock %}
-            {% endif %}
-
-  
-            {# Sidebar First #}
-            {% if page.sidebar_first or page.sidebar_second or page.content %}
-              
-                <div class="row clearfix" id="main-wrapper">
-                    {% if page.sidebar_first %}
-                      {% block sidebar_first %}
-                        <aside class="col-sm-3" role="complementary">
-                          {{ page.sidebar_first }}
-                        </aside>
-                      {% endblock %}
-                    {% endif %}
-
-                    {# Content #}
-                    {%
-                      set content_classes = [
-                        page.sidebar_first and page.sidebar_second ? 'col-sm-6',
-                        page.sidebar_first and page.sidebar_second is empty ? 'col-sm-9',
-                        page.sidebar_second and page.sidebar_first is empty ? 'col-sm-9',
-                        page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
-                      ]
-                    %}
-                    <section{{ content_attributes.addClass(content_classes) }}>
-                        {# Help #}
-                        {% if page.help %}
-                            {{ page.help }}
-                        {% endif %}
-
-                        {# Content #}                      
-                          {% block content %}
-                            <a id="main-content"></a>
-                              {{ page.content }}
-                          {% endblock %}                       
-                    </section>
-
-                      {# Sidebar Second #}
-                      {% if page.sidebar_second %}
-                        {% block sidebar_second %}
+                  <div class="row clearfix" id="main-wrapper">
+                      {% if page.sidebar_first %}
+                        {% block sidebar_first %}
                           <aside class="col-sm-3" role="complementary">
-                            {{ page.sidebar_second }}
+                            {{ page.sidebar_first }}
                           </aside>
                         {% endblock %}
                       {% endif %}
-                </div>
-            
-            {% endif %}
-    </div>
-  </main>
-{% endblock %}
 
-{% if page.footer1 or page.footer2 or page.footer3 or page.footer4 or page.footer_bar_left or page.footer_bar_right %}
-  <footer class=" footer1 site-footer section-footer" id="footer" role="contentinfo">
-    {% if page.footer1 or page.footer2 or page.footer3 or page.footer4 %}
-      <div class="container">
-        <div class="row">
-          {% if page.footer1 %}
-            {% if page.footer2 and page.footer3 and page.footer4 %}
-              <div class="col-lg-3 col-md-3">
-              {% elseif page.footer2 and page.footer3 %}
-                <div class="col-lg-4 col-md-4">
-              {% elseif page.footer2 and page.footer4 %}
-                <div class="col-lg-4 col-md-4">
-              {% elseif page.footer3 and page.footer4 %}
-                <div class="col-lg-4 col-md-4">
-              {% elseif page.footer2 or page.footer3 or page.footer4 %}
-                <div class="col-lg-6 col-md-6">
-              {% else  %}
-                <div class="col-lg-12">
-            {% endif %}
-              <div class="top1 footer-site-info footer-widget">
-                {{ page.footer1 }}
-              </div>
-            </div>
-          {% endif %}
+                      {# Content #}
+                      {%
+                        set content_classes = [
+                          page.sidebar_first and page.sidebar_second ? 'col-sm-6',
+                          page.sidebar_first and page.sidebar_second is empty ? 'col-sm-9',
+                          page.sidebar_second and page.sidebar_first is empty ? 'col-sm-9',
+                          page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
+                        ]
+                      %}
+                      <section{{ content_attributes.addClass(content_classes) }}>
+                          {# Help #}
+                          {% if page.help %}
+                              {{ page.help }}
+                          {% endif %}
 
-          {% if page.footer2 %}
-            {% if page.footer1 and page.footer3 and page.footer4 %}
-              <div class="col-lg-3 col-md-3">
-              {% elseif page.footer1 and page.footer3 %}
-                <div class="col-lg-4 col-md-4">
-              {% elseif page.footer1 and page.footer4 %}
-                <div class="col-lg-4 col-md-4">
-              {% elseif page.footer3 and page.footer4 %}
-                <div class="col-lg-4 col-md-4">
-              {% elseif page.footer1 or page.footer3 or page.footer4 %}
-                <div class="col-lg-6 col-md-6">
-              {% else  %}
-                <div class="col-lg-12">
-            {% endif %}
-              <div class="top2 footer-site-info footer-widget">
-                {{ page.footer2 }}
-              </div>
-            </div>
-          {% endif %}
+                          {# Content #}                      
+                            {% block content %}
+                              <a id="main-content"></a>
+                                {{ page.content }}
+                            {% endblock %}                       
+                      </section>
 
-          {% if page.footer3 %}
-            {% if page.footer1 and page.footer2 and page.footer4 %}
-              <div class="col-lg-3 col-md-3">
-              {% elseif page.footer1 and page.footer2 %}
-                <div class="col-lg-4 col-md-4">
-              {% elseif page.footer1 and page.footer4 %}
-                <div class="col-lg-4 col-md-4">
-              {% elseif page.footer2 and page.footer4 %}
-                <div class="col-lg-4 col-md-4">
-              {% elseif page.footer1 or page.footer2 or page.footer4 %}
-                <div class="col-lg-6 col-md-6">
-              {% else  %}
-                <div class="col-lg-12">
-            {% endif %}
-              <div class="top3 footer-site-info footer-widget">
-                {{ page.footer3 }}
-              </div>
-            </div>
-          {% endif %}
-
-          {% if page.footer4 %}
-            {% if page.footer1 and page.footer2 and page.footer3 %}
-              <div class="col-lg-3 col-md-3">
-              {% elseif page.footer1 and page.footer2 %}
-                <div class="col-lg-4 col-md-4">
-              {% elseif page.footer1 and page.footer3 %}
-                <div class="col-lg-4 col-md-4">
-              {% elseif page.footer2 and page.footer3 %}
-                <div class="col-lg-4 col-md-4">
-              {% elseif page.footer1 or page.footer2 or page.footer3 %}
-                <div class="col-lg-6 col-md-6">
-              {% else  %}
-                <div class="col-lg-12">
-            {% endif %}
-              <div class="top4 footer-site-info footer-widget">
-                {{ page.footer4 }}
-              </div>
-            </div>
-          {% endif %}
-
-        </div>
+                        {# Sidebar Second #}
+                        {% if page.sidebar_second %}
+                          {% block sidebar_second %}
+                            <aside class="col-sm-3" role="complementary">
+                              {{ page.sidebar_second }}
+                            </aside>
+                          {% endblock %}
+                        {% endif %}
+                  </div>
+              
+              {% endif %}
       </div>
-    {% endif %}
+    </main>
+  {% endblock %}
 
-      {#   <div id="site-footer-bar" class="footer-bar">
-            <div class="container">
-                <div class="row">
-                  {% if page.footer_bar_left %}
-                    {% block footer_bar_left %}
-                      <div class="col-sm-8">
-                          <div class="copyright">
-                            {{ page.footer_bar_left }}
+  {% if page.footer1 or page.footer2 or page.footer3 or page.footer4 or page.footer_bar_left or page.footer_bar_right %}
+    <footer class=" footer1 site-footer section-footer" id="footer" role="contentinfo">
+      {% if page.footer1 or page.footer2 or page.footer3 or page.footer4 %}
+        <div class="container">
+          <div class="row">
+            {% if page.footer1 %}
+              {% if page.footer2 and page.footer3 and page.footer4 %}
+                <div class="col-lg-3 col-md-3">
+                {% elseif page.footer2 and page.footer3 %}
+                  <div class="col-lg-4 col-md-4">
+                {% elseif page.footer2 and page.footer4 %}
+                  <div class="col-lg-4 col-md-4">
+                {% elseif page.footer3 and page.footer4 %}
+                  <div class="col-lg-4 col-md-4">
+                {% elseif page.footer2 or page.footer3 or page.footer4 %}
+                  <div class="col-lg-6 col-md-6">
+                {% else  %}
+                  <div class="col-lg-12">
+              {% endif %}
+                <div class="top1 footer-site-info footer-widget">
+                  {{ page.footer1 }}
+                </div>
+              </div>
+            {% endif %}
+
+            {% if page.footer2 %}
+              {% if page.footer1 and page.footer3 and page.footer4 %}
+                <div class="col-lg-3 col-md-3">
+                {% elseif page.footer1 and page.footer3 %}
+                  <div class="col-lg-4 col-md-4">
+                {% elseif page.footer1 and page.footer4 %}
+                  <div class="col-lg-4 col-md-4">
+                {% elseif page.footer3 and page.footer4 %}
+                  <div class="col-lg-4 col-md-4">
+                {% elseif page.footer1 or page.footer3 or page.footer4 %}
+                  <div class="col-lg-6 col-md-6">
+                {% else  %}
+                  <div class="col-lg-12">
+              {% endif %}
+                <div class="top2 footer-site-info footer-widget">
+                  {{ page.footer2 }}
+                </div>
+              </div>
+            {% endif %}
+
+            {% if page.footer3 %}
+              {% if page.footer1 and page.footer2 and page.footer4 %}
+                <div class="col-lg-3 col-md-3">
+                {% elseif page.footer1 and page.footer2 %}
+                  <div class="col-lg-4 col-md-4">
+                {% elseif page.footer1 and page.footer4 %}
+                  <div class="col-lg-4 col-md-4">
+                {% elseif page.footer2 and page.footer4 %}
+                  <div class="col-lg-4 col-md-4">
+                {% elseif page.footer1 or page.footer2 or page.footer4 %}
+                  <div class="col-lg-6 col-md-6">
+                {% else  %}
+                  <div class="col-lg-12">
+              {% endif %}
+                <div class="top3 footer-site-info footer-widget">
+                  {{ page.footer3 }}
+                </div>
+              </div>
+            {% endif %}
+
+            {% if page.footer4 %}
+              {% if page.footer1 and page.footer2 and page.footer3 %}
+                <div class="col-lg-3 col-md-3">
+                {% elseif page.footer1 and page.footer2 %}
+                  <div class="col-lg-4 col-md-4">
+                {% elseif page.footer1 and page.footer3 %}
+                  <div class="col-lg-4 col-md-4">
+                {% elseif page.footer2 and page.footer3 %}
+                  <div class="col-lg-4 col-md-4">
+                {% elseif page.footer1 or page.footer2 or page.footer3 %}
+                  <div class="col-lg-6 col-md-6">
+                {% else  %}
+                  <div class="col-lg-12">
+              {% endif %}
+                <div class="top4 footer-site-info footer-widget">
+                  {{ page.footer4 }}
+                </div>
+              </div>
+            {% endif %}
+
+          </div>
+        </div>
+      {% endif %}
+
+        {#   <div id="site-footer-bar" class="footer-bar">
+              <div class="container">
+                  <div class="row">
+                    {% if page.footer_bar_left %}
+                      {% block footer_bar_left %}
+                        <div class="col-sm-8">
+                            <div class="copyright">
+                              {{ page.footer_bar_left }}
+                            </div>
+                        </div>
+                      {% endblock %}
+                    {% endif %}
+
+                    {% if page.footer_bar_right %}
+                      {% block footer_bar_right %}
+                        <div class="col-sm-4 ">
+                          <div class="powredby">
+                            {{ page.footer_bar_right }}
                           </div>
-                      </div>
-                    {% endblock %}
-                  {% endif %}
+                        </div>
+                      {% endblock %}
+                    {% endif %}
 
+                  </div>
+              </div>
+            </div> #}
+
+
+        <div id="site-footer-bar" class="footer-bar">      
+          <div class="{{ container }}">
+            {% if page.footer_bar_left  or page.footer_bar_right %}
+              <div class="row footer-bottom">
+                  
+                  {% if page.footer_bar_left %}
+                    {% if page.footer_bar_left and page.footer_bar_right %}
+                      <div class="col-md-6">
+                    {% else %}
+                      <div class="col-md-12">
+                    {% endif %}
+                        <div class="copyright">
+                          {{ page.footer_bar_left }}    
+                        </div>
+                    </div>
+                  {% endif %}
+                    
                   {% if page.footer_bar_right %}
-                    {% block footer_bar_right %}
-                      <div class="col-sm-4 ">
-                        <div class="powredby">
+                    {% if page.footer_bar_left and page.footer_bar_right %}
+                      <div class="col-md-6">
+                    {% else %}
+                      <div class="col-md-12">
+                    {% endif %}
+                        <div class="footer-bootom-nav">
                           {{ page.footer_bar_right }}
                         </div>
                       </div>
-                    {% endblock %}
                   {% endif %}
+              </div>
+            {% endif %}
 
-                </div>
-            </div>
-          </div> #}
-
-
-      <div id="site-footer-bar" class="footer-bar">      
-        <div class="{{ container }}">
-          {% if page.footer_bar_left  or page.footer_bar_right %}
-            <div class="row footer-bottom">
-                
-                {% if page.footer_bar_left %}
-                  {% if page.footer_bar_left and page.footer_bar_right %}
-                    <div class="col-md-6">
-                  {% else %}
-                    <div class="col-md-12">
-                  {% endif %}
-                      <div class="copyright">
-                        {{ page.footer_bar_left }}    
-                      </div>
-                  </div>
-                {% endif %}
-                  
-                {% if page.footer_bar_right %}
-                  {% if page.footer_bar_left and page.footer_bar_right %}
-                    <div class="col-md-6">
-                  {% else %}
-                    <div class="col-md-12">
-                  {% endif %}
-                      <div class="footer-bootom-nav">
-                        {{ page.footer_bar_right }}
-                      </div>
-                    </div>
-                {% endif %}
-            </div>
-          {% endif %}
-
-        </div>
-      </div>   
-  </footer>
-{% endif %}
+          </div>
+        </div>   
+    </footer>
+  {% endif %}
+</div>

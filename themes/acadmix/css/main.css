@@ -16,24 +16,31 @@
 /* button */
 /* border and box-shadow */
 
-html,body {
-  font-size: 100%;
-  /*position: initial!important;*/
-   position: initial;
-  overflow-x: hidden;
-  /* font-family: "Open Sans", sans-serif; */
-  font-family: "COOP-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
-  min-height: 100%;
-  background-color: #ffffff;
-  line-height: 1.5;
+html {;
+  height: 100%;
+    line-height: 1.5;
   font-size: 1rem;
   color:#343536;
-  font-weight: 400;
+    font-weight: 400;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body {
+  /*position: initial!important;*/
+   position: initial;
+  overflow-x: hidden;
+  font-size: 100%;
+  /* font-family: "Open Sans", sans-serif; */
+  font-family: "COOP-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  min-height: 100%;
+  background: #e6ebef;
 
+}
+
+#page{
+  background: #ffffff;
+}
 /*#container {
    min-height:100%;
    position:relative;
