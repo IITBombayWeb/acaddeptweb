@@ -34,13 +34,10 @@ body {
   /* font-family: "Open Sans", sans-serif; */
   font-family: "COOP-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
   min-height: 100%;
-  background: #e6ebef;
-
-}
-
-#page{
   background: #ffffff;
+
 }
+
 /*#container {
    min-height:100%;
    position:relative;
