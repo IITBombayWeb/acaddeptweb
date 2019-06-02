@@ -16,6 +16,10 @@
   padding-top: 1em;
 }
 
+a.views-more-link{
+  color: #337ab7!important;
+}
+
 #main-content-with-nav {
     z-index: 1;
     background-color: #ffffff;
@@ -778,8 +782,11 @@ ul.shs li:last-of-type{
     line-height: 100%;
     font-size: 1.1rem;
     display: inline-block;
-    padding: 4px 8px;
-    width: 26px;
+    padding: 6px;
+    width: 30px;
+    color: #fff;
+    background: #337ab7;
+    border-radius: 5px;
 }
 
 @media screen and (min-width: 767px){
@@ -788,6 +795,21 @@ ul.shs li:last-of-type{
     text-align: right;
   }
 
+  .social-media a{
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+
+  .social-media a:hover{
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+      -webkit-transition: all 0.5s;
+     -moz-transition: all 0.5s;
+     -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
 }
 /*social media icons*/
 
