@@ -32,7 +32,7 @@
  */
 #}
 
-{# {% for field in fields -%}
+{% for field in fields -%}
   {{ field.separator }}
   {%- if field.wrapper_element -%}
     <{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
@@ -52,10 +52,8 @@
   {%- if field.wrapper_element -%}
     </{{ field.wrapper_element }}>
   {%- endif %}
-{%- endfor %} #}
+{%- endfor %}
 
-<h3 class="title mg_0">{{ fields.title.content }}</h3>
-
+{# <h3 class="title mg_0">{{ fields.title.content }}</h3>
 	<div><span class="date">{{ fields.field_event_date.content }}</span></div>
-
-  
+#}
