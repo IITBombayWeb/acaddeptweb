@@ -1516,11 +1516,14 @@ a.link-with-icon i.fa {
 /* home news */
 .news-card {
   min-height: 372px;
-  padding: 30px 25px; }
+  padding: 30px 25px; 
+}
   .news-card .lst_news_item a {
-    color: #000000; }
+    color: #000000; 
+  }
     .news-card .lst_news_item a:hover {
-      color: #D30015; }
+      color: #337ab7; 
+    }
   .news-card .stage-title {
     font-size: 16px;
     font-size: 1.14286rem;
@@ -1533,7 +1536,7 @@ a.link-with-icon i.fa {
 
   .news-card .date:before {
     margin-right: 5px;
-    }
+  }
 
 ul.list-unstyled.lst_news_list {
     margin: 0;
