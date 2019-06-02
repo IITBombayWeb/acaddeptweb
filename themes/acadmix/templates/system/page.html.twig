@@ -322,7 +322,7 @@
     </main>
   {% endblock %}
 
-  {% if page.footer1 or page.footer2 or page.footer3 or page.footer4 or page.footer_bar_left or page.footer_bar_right %}
+  {% if page.footer1 or page.footer2 or page.footer3 or page.footer4 or page.footer_bar_left or page.footer_bar_right or show_social_icon %}
     <footer class=" footer1 site-footer section-footer" id="footer" role="contentinfo">
       {% if page.footer1 or page.footer2 or page.footer3 or page.footer4 %}
         <div class="container">
@@ -411,41 +411,16 @@
         </div>
       {% endif %}
 
-        {#   <div id="site-footer-bar" class="footer-bar">
-              <div class="container">
-                  <div class="row">
-                    {% if page.footer_bar_left %}
-                      {% block footer_bar_left %}
-                        <div class="col-sm-8">
-                            <div class="copyright">
-                              {{ page.footer_bar_left }}
-                            </div>
-                        </div>
-                      {% endblock %}
-                    {% endif %}
-
-                    {% if page.footer_bar_right %}
-                      {% block footer_bar_right %}
-                        <div class="col-sm-4 ">
-                          <div class="powredby">
-                            {{ page.footer_bar_right }}
-                          </div>
-                        </div>
-                      {% endblock %}
-                    {% endif %}
-
-                  </div>
-              </div>
-            </div> #}
-
 
         <div id="site-footer-bar" class="footer-bar">      
           <div class="{{ container }}">
-            {% if page.footer_bar_left  or page.footer_bar_right %}
+            {% if page.footer_bar_left  or page.footer_bar_right or show_social_icon %}
               <div class="row footer-bottom">
                   
                   {% if page.footer_bar_left %}
-                    {% if page.footer_bar_left and page.footer_bar_right %}
+                    {% if page.footer_bar_right and show_social_icon %}
+                      <div class="col-md-3">
+                    {% elseif page.footer_bar_right or show_social_icon %}
                       <div class="col-md-6">
                     {% else %}
                       <div class="col-md-12">
@@ -457,7 +432,9 @@
                   {% endif %}
                     
                   {% if page.footer_bar_right %}
-                    {% if page.footer_bar_left and page.footer_bar_right %}
+                    {% if page.footer_bar_left and show_social_icon %}
+                      <div class="col-md-6">
+                    {% elseif page.footer_bar_left or show_social_icon %}
                       <div class="col-md-6">
                     {% else %}
                       <div class="col-md-12">
@@ -467,6 +444,35 @@
                         </div>
                       </div>
                   {% endif %}
+
+
+                  {% if show_social_icon %}
+                    {% if page.footer_bar_left and page.footer_bar_right %}
+                      <div class="col-md-3">
+                    {% elseif page.footer_bar_left or page.footer_bar_right %}
+                      <div class="col-md-6">
+                    {% else %}
+                      <div class="col-md-12">
+                    {% endif %}
+                        <div class="text-right">
+                            <p class="social-media">
+                              {% if facebook_url %}
+                                <a href="{{ facebook_url }}"  class="facebook" target="_blank"  title="{{ 'Facebook'|t }}" ><i class="fab fa-facebook-f"></i></a>
+                              {% endif %}
+                              {% if google_plus_url %}
+                                <a href="{{ google_plus_url }}"  class="google-plus" target="_blank"  title="{{ 'Google plus'|t }}" ><i class="fab fa-google-plus-g"></i></a>
+                              {% endif %}
+                              {% if twitter_url %}
+                                <a href="{{ twitter_url }}" class="twitter" target="_blank"  title="{{ 'Twitter'|t }}"><i class="fab fa-twitter"></i></a>
+                              {% endif %}
+                              {% if linkedin_url %}
+                                <a href="{{ linkedin_url }}" class="linkedin" target="_blank"  title="{{ 'Linked In'|t }}"><i class="fab fa-linkedin-in"></i></a>
+                              {% endif %}
+                            </p>                               
+                        </div>
+                      </div>
+                  {% endif %}
+
               </div>
             {% endif %}
 

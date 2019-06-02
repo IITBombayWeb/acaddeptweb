@@ -9,8 +9,8 @@
  * - ds_content: content region
  */
 #}
-	<header class="sabbi-page-header page-header-lg event-page-header" {% if faculty_header_style %} style = "{{ faculty_header_style }}" {% endif %}>
-        <div class="page-header-content conternt-center">
+	<header class="sabbi-page-header page-header-lg" {% if faculty_header_style %} style = "{{ faculty_header_style }}" {% endif %}>
+        <div class="page-header-content">
             <div class="header-title-block">
           </div>
         </div>
@@ -59,10 +59,20 @@
 		             <p class="text-foc-md">{{ ds_content.field_faculty_designation.0 }}</p>
 		      	</article>
 						<ul class="nav nav-pills profile-nav">
-							<li class="active"><a data-toggle="pill" href="#personal"><i class="fa fa-user" aria-hidden="true"></i> Personal Information</a></li>
-							<li><a data-toggle="pill" href="#rnd"><i class="fa fa-tasks" aria-hidden="true"></i> R&D</a></li>
-							<li><a data-toggle="pill" href="#teaching"> <i class="fa fa-book" aria-hidden="true"></i> Teaching</a></li>
-							<li><a data-toggle="pill" href="#research-area"><i class="fa fa-check-square-o" aria-hidden="true"></i> Research Areas</a></li>
+							<li class="active"><a data-toggle="pill" href="#personal"><i class="fa fa-user" aria-hidden="true"></i> Personal Information</a>
+							</li>
+							{% if field_faculty_rd_proj %}
+								<li><a data-toggle="pill" href="#rnd"><i class="fa fa-tasks" aria-hidden="true"></i> R&D</a>
+								</li>
+							{% endif %}
+							{% if field_courses_taught %}
+								<li><a data-toggle="pill" href="#teaching"> <i class="fa fa-book" aria-hidden="true"></i> Teaching</a>
+								</li>
+							{% endif %}
+							{% if field_research_area %}
+								<li><a data-toggle="pill" href="#research-area"><i class="fa fa-check-square-o" aria-hidden="true"></i> Research Areas</a>
+								</li>
+							{% endif %}
 						</ul>
 						<div class="tab-content">
 							<div class="personal tab-pane fade in active stage-content-biog" id="personal">
