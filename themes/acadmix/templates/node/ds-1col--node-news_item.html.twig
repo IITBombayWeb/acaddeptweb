@@ -12,9 +12,27 @@
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
   {{ title_suffix.contextual_links }}
-<article class="sabbi-events-item">
-  <div class="content-center events-item-meta">  
-    {{ ds_content }}
-  </div>
-</article>
+
+
+	<header class="sabbi-page-header page-header-lg news-page-header" {% if news_header_style %} style = "{{ news_header_style }}" {% endif %}>
+        <div class="page-header-content">
+            <div class="header-title-block">
+                <h2 class="page-title">{{ title }}</h2>
+            </div>
+        </div>
+    </header>
+
+  <section class="sabbi-section stage_events_post stage_events_post-single">
+
+        <div class="events_post_single-sagment">
+
+                    	<article class="sabbi-events-item">
+               
+                        <div class="events-item-meta content-center">
+                            {{ ds_content|without('title') }}
+                        </div>
+                      </article><!-- /.sabbi-events-item -->
+        </div><!-- /.events_post_single-sagment -->
+
+</section>
 </{{ ds_content_wrapper }}>
