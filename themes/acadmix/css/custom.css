@@ -223,9 +223,9 @@ a.logo{
     border-bottom: 1px solid #d32931;
   }
 
-/*        ul#main-menu{
-    font-family:  Montserrat;
-  }*/
+  ul#main-menu {
+    font-family:  Montserrat, "sans-serif";
+  }
 
   .region-navigation-collapsible {
     width: auto;
