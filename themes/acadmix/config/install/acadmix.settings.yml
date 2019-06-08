@@ -59,3 +59,12 @@ logo:
   path: ''
   url: ''
   use_default: true
+show_social_icon: 1
+#default value for social media
+facebook_url: 'https://www.facebook.com/iitbombay'
+twitter_url: 'https://twitter.com/iitbombay'
+google_plus_url: 'https://plus.google.com/+iitbombay'
+linkedin_url: 'https://www.linkedin.com/edu/school?id=13496&trk=edu-cp-title'
+faculty_header_bg_file: 'profiles/contrib/acaddeptweb/themes/acadmix/img/research1.jpg'
+event_header_bg_file: 'profiles/contrib/acaddeptweb/themes/acadmix/img/seats.jpg'
+news_header_bg_file: 'profiles/contrib/acaddeptweb/themes/acadmix/img/news.jpg'

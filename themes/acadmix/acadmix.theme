@@ -18,6 +18,8 @@ use Drupal\Component\Utility\Xss;
 use Drupal\search\Form\SearchBlockForm;
 use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Theme\ThemeSettings;
+use Drupal\image\Entity\ImageStyle;
 use Drupal\system\Form\ThemeSettingsForm;
 use Drupal\file\Entity\File;
 use Drupal\Core\Url;
@@ -35,6 +37,53 @@ $path_to_acadmix = drupal_get_path('theme', 'acadmix');
 
 
 
+function acadmix_preprocess_ds_1col(&$variables){
+  global $base_path;
+  $variables['faculty_header_style'] = '';
+  $faculty_header_bg_file =  $base_path.'/' . theme_get_setting('faculty_header_bg_file', $theme_name);
+  
+  if ($faculty_header_bg_file) {
+    $variables['faculty_header_style'] .= 'background: url(' . $faculty_header_bg_file . '); background-size: cover; background-color: #e4e6fd;';
+  }
+
+
+  $variables['event_header_style'] = '';
+  $event_header_bg_file =  $base_path.'/' . theme_get_setting('event_header_bg_file', $theme_name);
+  
+  if ($event_header_bg_file) {
+    $variables['event_header_style'] .= 'background: url(' . $event_header_bg_file . '); background-size: cover; background-color: #e4e6fd;';
+  }
+
+
+  $variables['news_header_style'] = '';
+  $news_header_bg_file =  $base_path.'/' . theme_get_setting('news_header_bg_file', $theme_name);
+  
+  if ($news_header_bg_file) {
+    $variables['news_header_style'] .= 'background: url(' . $news_header_bg_file . '); background-size: cover; background-color: #e4e6fd;';
+  }
+ 
+}
+
+
+function acadmix_preprocess_page(&$variables) {
+  // Social media global variable.
+  $variables['show_social_icon'] = theme_get_setting('show_social_icon');
+  $variables['facebook_url'] = theme_get_setting('facebook_url');
+  $variables['google_plus_url'] = theme_get_setting('google_plus_url');
+  $variables['twitter_url'] = theme_get_setting('twitter_url');
+  $variables['linkedin_url'] = theme_get_setting('linkedin_url');
+
+
+  //To get the current URL
+  $current_url  = \Drupal::request()->getRequestUri();
+  $current_path = explode("/", $current_url);
+  $variables['current_path'] = $current_path[2];
+
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+  $variables['site_slogan'] = \Drupal::config('system.site')->get('slogan');
+
+}
+
 
 function acadmix_preprocess_block(&$variables) {
 global $base_url, $base_path;
@@ -49,5 +98,3 @@ global $base_url, $base_path;
 
   }
 }
-
-

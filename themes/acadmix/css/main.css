@@ -16,23 +16,28 @@
 /* button */
 /* border and box-shadow */
 
-html,body {
-  font-size: 100%;
-  /*position: initial!important;*/
-   position: initial;
-  overflow-x: hidden;
-  /* font-family: "Open Sans", sans-serif; */
-  font-family: "COOP-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
-  min-height: 100%;
-  background-color: #ffffff;
-  line-height: 1.5;
+html {;
+  height: 100%;
+    line-height: 1.5;
   font-size: 1rem;
   color:#343536;
-  font-weight: 400;
+    font-weight: 400;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body {
+  /*position: initial!important;*/
+   position: initial;
+  overflow-x: hidden;
+  font-size: 100%;
+  /* font-family: "Open Sans", sans-serif; */
+  font-family: "COOP-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  min-height: 100%;
+  background: #ffffff;
+
+}
+
 
 /*#container {
    min-height:100%;
@@ -51,7 +56,7 @@ html,body {
 }
 */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat";
+  font-family: "Montserrat", "sans-serif";
   line-height: 1.41398;
   font-weight: 700; }
 
@@ -67,6 +72,10 @@ input:focus,
 textarea:focus,
 button:focus {
   outline: none;
+}
+
+.btn-primary a, .btn-primary a:hover, .btn-primary a:focus, .btn-primary a:active{
+  color: #ffffff;
 }
 
 a.sabbi-post-link {
@@ -1037,8 +1046,10 @@ h1.academix-logo {
 /* header */
 .sabbi-page-header {
   min-height: 230px;
-  background-color: rgba(163, 22, 117, 0.12);
-  position: relative; }
+  background-color: rgba(9, 143, 208, 0.2);
+  background-color: #EDF2F6;
+  position: relative; 
+}
   .sabbi-page-header.page-header-lg {
     min-height: 265px; }
   .sabbi-page-header .header-title-block {
@@ -1054,14 +1065,17 @@ h1.academix-logo {
     margin-bottom: 0;
     padding: 10px 25px;
     font-size: 28px;
-    font-size: 2rem;
-    text-transform: uppercase;
+    font-size: 1.5rem;
     border-top-left-radius: 4px;
-    border-top-right-radius: 4px; }
+    border-top-right-radius: 4px; 
+  }
+  
   @media (max-width: 767px) {
     .sabbi-page-header .page-title {
       font-size: 22px;
-      font-size: 1.57143rem; } }
+      font-size: 1rem; } 
+    }
+
 .seq .seq-step1{
      background-repeat: no-repeat;
      background-size: cover;
@@ -1502,11 +1516,14 @@ a.link-with-icon i.fa {
 /* home news */
 .news-card {
   min-height: 372px;
-  padding: 30px 25px; }
+  padding: 30px 25px; 
+}
   .news-card .lst_news_item a {
-    color: #000000; }
+    color: #000000; 
+  }
     .news-card .lst_news_item a:hover {
-      color: #D30015; }
+      color: #337ab7; 
+    }
   .news-card .stage-title {
     font-size: 16px;
     font-size: 1.14286rem;
@@ -1519,7 +1536,7 @@ a.link-with-icon i.fa {
 
   .news-card .date:before {
     margin-right: 5px;
-    }
+  }
 
 ul.list-unstyled.lst_news_list {
     margin: 0;
@@ -2056,9 +2073,9 @@ ul.list-unstyled.lst_news_list {
   margin-top: 2em; 
 }
 
-.sabbi-page-header {
+/*.sabbi-page-header {
   margin-top: 75px; }
-
+*/
 .page-academix .sabbi-page-header {
   background-color: #b03838; }
 

@@ -29,7 +29,7 @@
     {% if menu_level == 0 %}
       <ul class="sm menu-base-theme" id="main-menu" {{ attributes.addClass('menu', 'nav', 'navbar-nav') }}>
     {% else %}
-      <ul class="animated zoomIn">
+      <ul class="animated zoomIn faster">
     {% endif %}
     {% for item in items %}
       {% if menu_level == 0 and item.is_expanded %}
