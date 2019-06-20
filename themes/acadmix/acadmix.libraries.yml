@@ -6,7 +6,6 @@ bootstrap:
       includes/bootstrap/css/bootstrap-theme.min.css: {}
   js:
     includes/bootstrap/js/bootstrap.min.js: {}
-    includes/bootstrap/js/popper.min.js: {}
   dependencies:
     - core/jquery
 
