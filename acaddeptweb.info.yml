@@ -2,7 +2,7 @@ name: acaddeptweb
 core: 8.x
 type: profile
 description: 'Academic Department Website Distribution'
-version: '8.6.x'
+version: '8.7.x'
 
 distribution:
   name: 'Academic Department Website Distribution'
